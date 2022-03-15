@@ -2,7 +2,7 @@ import React from 'react';
 
 import NavItem from './NavItem';
 
-const SidebarNavigation = ({ navList, navItems }) => {
+const SidebarNavigation = ({ navList, navItems, changeMainContent }) => {
 
   return (
     <div className='Nav'>
@@ -12,6 +12,7 @@ const SidebarNavigation = ({ navList, navItems }) => {
             <NavItem
               navItem={navItem}
               navSubItems={navItems[navItem]}
+              changeMainContent={changeMainContent}
               key={key}
             />
           );

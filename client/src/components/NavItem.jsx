@@ -1,17 +1,19 @@
 import React from 'react';
 
-const NavItem = ({ navItem, navSubItems=[] }) => {
+const NavItem = ({ navItem, navSubItems=[], changeMainContent }) => {
 
   return (
     <div>
       <div>{navItem}</div>
       {navSubItems.map((navSubItem, key) => {
+        const { item } = navSubItem;
         return (
           <a
-            href={navSubItem.link}
+            href='#undefined'
             key={key}
+            onClick={() => changeMainContent(item)}
           >
-            {navSubItem.item}
+            {item}
           </a>
         )
       })}

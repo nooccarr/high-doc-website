@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 
+import MainSectionHeading from './MainSectionHeading';
 import Card from './Card';
 
-const MainContent = () => {
+const MainWelcome = ({ mainSectionHeading }) => {
   const [detailCards, setDetailCards] = useState([]);
 
   useEffect(() => {
@@ -11,7 +12,7 @@ const MainContent = () => {
   }, []);
 
   const getDetailCards = () => {
-    Axios.get('../../server/sampleData/mainContentData.json')
+    Axios.get('../../server/sampleData/mainWelcomeData.json')
       .then(({ data }) => {
         setDetailCards(data.cards);
       })
@@ -20,10 +21,7 @@ const MainContent = () => {
 
   return (
     <main>
-      <section>
-        <h1>Hightouch Documentation</h1>
-        <p>Get an overview of Hightouch's features, integrations, and how to use them.</p>
-      </section>
+      <MainSectionHeading mainSectionHeading={mainSectionHeading} />
       <section>
         <h2>
           <a href='#undefined'>Dive deeper</a>
@@ -43,4 +41,4 @@ const MainContent = () => {
   );
 };
 
-export default MainContent;;
+export default MainWelcome;

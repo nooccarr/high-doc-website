@@ -3,15 +3,18 @@ import Axios from 'axios';
 
 import TopBar from './components/TopBar';
 import SidebarNavigation from './components/SidebarNavigation';
-import MainContent from './components/MainContent';
+import MainWelcome from './components/MainWelcome';
+import MainOtherDocs from './components/MainOtherDocs';
 
 const App = () => {
-  const [view, setView] = useState('main-content');
   const [navList, setNavList] = useState([]);
   const [navItems, setNavItems] = useState({});
+  const [mainContent, setMainContent] = useState('Welcome');
+  const [mainSectionHeadings, setMainSectionHeadings] = useState({});
 
   useEffect(() => {
     getSidebarNavigation();
+    getMainSectionHeadings();
   }, []);
 
   const getSidebarNavigation = () => {
@@ -23,9 +26,31 @@ const App = () => {
       .catch((err) => console.log(err));
   };
 
-  const renderView = () => {
-    if (view === 'main-content') {
-      return (<MainContent />);
+  const getMainSectionHeadings = () => {
+    Axios.get('../../server/sampleData/mainSectionHeadingData.json')
+      .then(({ data }) => {
+        setMainSectionHeadings(data);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const changeMainContent = (item) => {
+    setMainContent(item);
+  };
+
+  const renderMainContent = () => {
+    if (mainContent === 'Welcome') {
+      return (
+        <MainWelcome
+          mainSectionHeading={mainSectionHeadings[mainContent]}
+        />
+      );
+    } else {
+      return (
+        <MainOtherDocs
+          mainSectionHeading={mainSectionHeadings[mainContent]}
+        />
+      );
     }
   };
 
@@ -35,8 +60,9 @@ const App = () => {
       <SidebarNavigation
         navList={navList}
         navItems={navItems}
+        changeMainContent={changeMainContent}
       />
-      <div>{renderView()}</div>
+      <div>{renderMainContent()}</div>
     </div>
   );
 };
