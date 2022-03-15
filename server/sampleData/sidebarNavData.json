@@ -1,0 +1,95 @@
+{
+  "navItemList": ["Home", "Destinations", "Audiences", "Workspaces", "Security"],
+  "navItems": {
+    "Home": [
+      {
+        "item": "Welcome",
+        "link": "https://hightouch.io/docs/"
+      },
+      {
+        "item": "Concepts",
+        "link": "https://hightouch.io/docs/concepts/"
+      }
+    ],
+    "Destinations": [
+      {
+        "item": "Acoustic",
+        "link": "https://hightouch.io/docs/destinations/acoustic/"
+      },
+      {
+        "item": "Asana",
+        "link": "https://hightouch.io/docs/destinations/asana/"
+      },
+      {
+        "item": "Customer.io",
+        "link": "https://hightouch.io/docs/destinations/customerio/"
+      },
+      {
+        "item": "Google Ads",
+        "link": "https://hightouch.io/docs/destinations/google/"
+      },
+      {
+        "item": "Pendo",
+        "link": "https://hightouch.io/docs/destinations/pendo/"
+      },
+      {
+        "item": "Rokt",
+        "link": "https://hightouch.io/docs/destinations/rokt/"
+      },
+      {
+        "item": "Segment",
+        "link": "https://hightouch.io/docs/destinations/segment/"
+      },
+      {
+        "item": "Tiktok",
+        "link": "https://hightouch.io/docs/destinations/tiktok/"
+      },
+      {
+        "item": "Zendesk",
+        "link": "https://hightouch.io/docs/destinations/zendesk/"
+      }
+    ],
+    "Audiences": [
+      {
+        "item": "Overview",
+        "link": "https://hightouch.io/docs/hightouch-audiences/overview/"
+      },
+      {
+        "item": "Usage",
+        "link": "https://hightouch.io/docs/hightouch-audiences/usage/"
+      },
+      {
+        "item": "Schema",
+        "link": "https://hightouch.io/docs/hightouch-audiences/schema/"
+      },
+      {
+        "item": "Sync Templates",
+        "link": "https://hightouch.io/docs/hightouch-audiences/sync-templates/"
+      }
+    ],
+    "Workspaces": [
+      {
+        "item": "User Permissions",
+        "link": "https://hightouch.io/docs/workspaces/permissions/"
+      },
+      {
+        "item": "Pricing Information",
+        "link": "https://hightouch.io/docs/workspaces/pricing/"
+      }
+    ],
+    "Security": [
+      {
+        "item": "Security Basics",
+        "link": "https://hightouch.io/docs/security/securitybasics/"
+      },
+      {
+        "item": "Tunnels",
+        "link": "https://hightouch.io/docs/security/tunnel/"
+      },
+      {
+        "item": "Single Sign-On (SSO)",
+        "link": "https://hightouch.io/docs/security/sso/"
+      }
+    ]
+  }
+}

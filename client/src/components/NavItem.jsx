@@ -1,9 +1,20 @@
 import React from 'react';
 
-const NavItem = ({ item }) => {
+const NavItem = ({ navItem, navSubItems=[] }) => {
+
   return (
     <div>
-      {item}
+      <div>{navItem}</div>
+      {navSubItems.map((navSubItem, key) => {
+        return (
+          <a
+            href={navSubItem.link}
+            key={key}
+          >
+            {navSubItem.item}
+          </a>
+        )
+      })}
     </div>
   );
 };
