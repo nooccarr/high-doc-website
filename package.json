@@ -4,7 +4,8 @@
   "description": "Implement a minimal design of the Hightouch's documentation website.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rm ./client/dist/bundle.js",
+    "build-dev": "webpack --mode development --watch"
   },
   "author": "Soohyun Lim",
   "license": "ISC",
