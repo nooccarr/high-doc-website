@@ -6,6 +6,7 @@ import SidebarNavigation from './components/SidebarNavigation';
 import MainContent from './components/MainContent';
 
 const App = () => {
+  const [view, setView] = useState('main-content');
   const [navList, setNavList] = useState([]);
   const [navItems, setNavItems] = useState({});
 
@@ -16,11 +17,16 @@ const App = () => {
   const getSidebarNavigation = () => {
     Axios.get('../../server/sampleData/sidebarNavData.json')
       .then(({ data }) => {
-        console.log(data);
         setNavList(data.navItemList);
         setNavItems(data.navItems);
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
+  };
+
+  const renderView = () => {
+    if (view === 'main-content') {
+      return (<MainContent />);
+    }
   };
 
   return (
@@ -30,7 +36,7 @@ const App = () => {
         navList={navList}
         navItems={navItems}
       />
-      <MainContent />
+      <div>{renderView()}</div>
     </div>
   );
 };

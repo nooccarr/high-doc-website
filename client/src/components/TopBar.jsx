@@ -10,10 +10,10 @@ const TopBar = () => {
       </div>
       <div>
         <a href='https://app.hightouch.io/signup'>
-          <button>sign up</button>
+          <button>Sign up</button>
         </a>
         <a href='https://app.hightouch.io/login'>
-          <button>login</button>
+          <button>Login</button>
         </a>
       </div>
     </div>
