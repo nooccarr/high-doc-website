@@ -6,14 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nooccarr/hightouch-clone.git"
-  },
   "author": "Soohyun Lim",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nooccarr/hightouch-clone/issues"
-  },
-  "homepage": "https://github.com/nooccarr/hightouch-clone#readme"
+  "dependencies": {
+    "@babel/core": "^7.17.7",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2"
+  }
 }
