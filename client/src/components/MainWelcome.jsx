@@ -4,21 +4,7 @@ import Axios from 'axios';
 import MainSectionHeading from './MainSectionHeading';
 import Card from './Card';
 
-const MainWelcome = ({ mainSectionHeading }) => {
-  const [detailCards, setDetailCards] = useState([]);
-
-  useEffect(() => {
-    getDetailCards();
-  }, []);
-
-  const getDetailCards = () => {
-    Axios.get('../../server/sampleData/mainWelcomeData.json')
-      .then(({ data }) => {
-        setDetailCards(data.cards);
-      })
-      .catch((err) => console.log(err));
-  };
-
+const MainWelcome = ({ mainSectionHeading, mainWelcomeCards }) => {
   return (
     <main>
       <MainSectionHeading mainSectionHeading={mainSectionHeading} />
@@ -27,12 +13,9 @@ const MainWelcome = ({ mainSectionHeading }) => {
           <a href='#undefined'>Dive deeper</a>
         </h2>
         <div>
-          {detailCards.map((detailCard, key) => {
+          {mainWelcomeCards.map((mainWelcomeCard, key) => {
             return (
-              <Card
-                detailCard={detailCard}
-                key={key}
-              />
+              <Card mainWelcomeCard={mainWelcomeCard} key={key} />
             );
           })}
         </div>

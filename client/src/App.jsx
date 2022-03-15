@@ -11,25 +11,25 @@ const App = () => {
   const [navItems, setNavItems] = useState({});
   const [mainContent, setMainContent] = useState('Welcome');
   const [mainSectionHeadings, setMainSectionHeadings] = useState({});
+  const [mainWelcomeCards, setMainWelcomeCards] = useState([]);
 
   useEffect(() => {
-    getSidebarNavigation();
-    getMainSectionHeadings();
+    getNavSectionMainContentData();
   }, []);
 
-  const getSidebarNavigation = () => {
-    Axios.get('../../server/sampleData/sidebarNavData.json')
+  const getNavSectionMainContentData = () => {
+    Axios.get('../../server/sampleData/sampleData.json')
       .then(({ data }) => {
-        setNavList(data.navItemList);
-        setNavItems(data.navItems);
-      })
-      .catch((err) => console.log(err));
-  };
-
-  const getMainSectionHeadings = () => {
-    Axios.get('../../server/sampleData/mainSectionHeadingData.json')
-      .then(({ data }) => {
-        setMainSectionHeadings(data);
+        const {
+          navItemList,
+          navItems,
+          mainSectionHeadings,
+          mainWelcomeCards
+        } = data;
+        setNavList(navItemList);
+        setNavItems(navItems);
+        setMainSectionHeadings(mainSectionHeadings);
+        setMainWelcomeCards(mainWelcomeCards);
       })
       .catch((err) => console.log(err));
   };
@@ -39,18 +39,16 @@ const App = () => {
   };
 
   const renderMainContent = () => {
+    const mainSectionHeading = mainSectionHeadings[mainContent];
     if (mainContent === 'Welcome') {
       return (
         <MainWelcome
-          mainSectionHeading={mainSectionHeadings[mainContent]}
+          mainSectionHeading={mainSectionHeading}
+          mainWelcomeCards={mainWelcomeCards}
         />
       );
     } else {
-      return (
-        <MainOtherDocs
-          mainSectionHeading={mainSectionHeadings[mainContent]}
-        />
-      );
+      return (<MainOtherDocs mainSectionHeading={mainSectionHeading} />);
     }
   };
 

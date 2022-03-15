@@ -1,0 +1,171 @@
+{
+  "navItemList": ["Home", "Destinations", "Audiences", "Workspaces", "Security"],
+  "navItems": {
+    "Home": [
+      {
+        "item": "Welcome"
+      },
+      {
+        "item": "Concepts"
+      }
+    ],
+    "Destinations": [
+      {
+        "item": "Acoustic"
+      },
+      {
+        "item": "Asana"
+      },
+      {
+        "item": "Customer.io"
+      },
+      {
+        "item": "Google Ads"
+      },
+      {
+        "item": "Pendo"
+      },
+      {
+        "item": "Rokt"
+      },
+      {
+        "item": "Segment"
+      },
+      {
+        "item": "Tiktok"
+      },
+      {
+        "item": "Zendesk"
+      }
+    ],
+    "Audiences": [
+      {
+        "item": "Overview"
+      },
+      {
+        "item": "Usage"
+      },
+      {
+        "item": "Schema"
+      },
+      {
+        "item": "Sync Templates"
+      }
+    ],
+    "Workspaces": [
+      {
+        "item": "User Permissions"
+      },
+      {
+        "item": "Pricing Information"
+      }
+    ],
+    "Security": [
+      {
+        "item": "Security Basics"
+      },
+      {
+        "item": "Tunnels"
+      },
+      {
+        "item": "Single Sign-On (SSO)"
+      }
+    ]
+  },
+  "mainSectionHeadings": {
+    "Welcome": {
+      "title": "Hightouch Documentation",
+      "description": "Get an overview of Hightouch's features, integrations, and how to use them."
+    },
+    "Concepts": {
+      "title": "Concepts",
+      "description": "At a high-level, Hightouch constructs your data pipeline by connecting a model to a destination. This is called a sync."
+    },
+    "Acoustic": {
+      "title": "Acoustic",
+      "description": "Acoustic is a marketing platform that enables you to run automated, personalized email campaigns."
+    },
+    "Asana": {
+      "title": "Asana",
+      "description": "Asana is a web and mobile application designed to help teams organize, track, and manage their work."
+    },
+    "Customer.io": {
+      "title": "Customer.io",
+      "description": "With Customer.io, send targeted emails, push notifications, and SMS to lower churn, create stronger relationships, and drive subscriptions."
+    },
+    "Google Ads": {
+      "title": "Google Ads",
+      "description": "Google Ads remarketing allows you to advertise to people who have previously visited your website, used your mobile app, or who are in your CRM databases, by showing them relevant ads when they visit other sites or search on Google. The user lists used in remarketing can also be used for other types of audience targeting, such as Customer Match."
+    },
+    "Pendo": {
+      "title": "Pendo",
+      "description": "Pendo is a product experience platform that helps software product teams deliver software users love."
+    },
+    "Rokt": {
+      "title": "Rokt",
+      "description": "Use the Events API to send event data straight from your data warehouse to Rokt for use within Rokt's advertising platform."
+    },
+    "Segment": {
+      "title": "Segment",
+      "description": "Segment provides a single API to track customer data across multiple devices and channels and send it to third-party tools, internal systems, and data warehouses."
+    },
+    "Tiktok": {
+      "title": "Tiktok",
+      "description": "Use the Tiktok marketing events API to send web event information to be used within Tiktok for marketing purposes."
+    },
+    "Zendesk": {
+      "title": "Zendesk",
+      "description": "Zendesk provides a leading customer service platform that includes ticketing, self-service options, and customer support features. Its cloud-based help desk solution is used by more than 200,000 organizations worldwide."
+    },
+    "Overview": {
+      "title": "Overview",
+      "description": "Hightouch Audiences turns your data warehouse into a CDP (Customer Data Platform). It’s a visual drag-n-drop audience builder (typically used by marketing teams) that enables self-service cohort creation and orchestration directly from your data models in the warehouse, without requiring any SQL knowledge."
+    },
+    "Usage": {
+      "title": "Usage",
+      "description": "To create and sync a Hightouch Audience:"
+    },
+    "Schema": {
+      "title": "Schema",
+      "description": "The root users table, related objects, and events, are configured in the schema tab. The schemas tab is divided into objects and events."
+    },
+    "Sync Templates": {
+      "title": "Sync Templates",
+      "description": "Sync templates allow you to centralize configuration when syncing audiences to a particular destination. Define your sync configuration in one place, then sync your audiences without duplicating your config unnecessarily."
+    },
+    "User Permissions": {
+      "title": "User Permissions",
+      "description": "Hightouch Workspaces allow you to select granular, customizable roles to limit permissions for your users."
+    },
+    "Pricing Information": {
+      "title": "Pricing Information",
+      "description": "Transparency into our pricing model and some answers to commonly asked questions."
+    },
+    "Security Basics": {
+      "title": "Security Basics",
+      "description": "This is an overview of our security and infrastructure."
+    },
+    "Tunnels": {
+      "title": "Tunnels",
+      "description": "Connect to your data warehouse securely. Hightouch supports the ability to self-serve set up an SSH tunnel connection, either standard or reverse."
+    },
+    "Single Sign-On (SSO)": {
+      "title": "SSO",
+      "description": "Connect to Hightouch with SSO."
+    }
+  },
+  "mainWelcomeCards": [
+    {
+      "thumbnail": "https://www.master-7rqtwti-od3d6y3dmsppq.us-4.platformsh.site/uploads/Frame_22_459a12290a.png",
+      "title": "3 great ways of scheduling a Hightouch sync",
+      "description": "We've got three great ways of integrating Hightouch with your existing workflows: Airflow Operators, dbt Cloud integrations, and Webhook APIs.",
+      "link": "https://hightouch.io/blog/3-great-ways-to-schedule-a-hightouch-sync-from-your-existing-workflows/"
+    },
+    {
+      "thumbnail": "https://www.master-7rqtwti-od3d6y3dmsppq.us-4.platformsh.site/uploads/Data_Integration_The_Definitive_Guide_852b8c6bbb.png",
+      "title": "Data Integration: The Definitive Guide",
+      "description": "Data integration is the process of moving data between databases internal, external, or both. Read this guide to learn about all the integration technologies and understand how data moves through each of them.",
+      "link": "https://hightouch.io/blog/data-integration"
+    }
+  ]
+}

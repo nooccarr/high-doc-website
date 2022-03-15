@@ -1,12 +1,13 @@
 import React from 'react';
 
-const Card = ({ detailCard }) => {
+const Card = ({ mainWelcomeCard }) => {
+  const { thumbnail, title, description, link } = mainWelcomeCard;
   return (
     <div>
-      <img src={detailCard.thumbnail} />
-      <span>{detailCard.title}</span>
-      <p>{detailCard.description}</p>
-      <a href={detailCard.link}>Read article</a>
+      <img src={thumbnail} />
+      <span>{title}</span>
+      <p>{description}</p>
+      <a href={link}>Read article</a>
     </div>
 
   );
