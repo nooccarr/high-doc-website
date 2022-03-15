@@ -3,6 +3,7 @@ import Axios from 'axios';
 
 import TopBar from './components/TopBar';
 import SidebarNavigation from './components/SidebarNavigation';
+import MainContent from './components/MainContent';
 
 const App = () => {
   const [navList, setNavList] = useState([]);
@@ -29,6 +30,7 @@ const App = () => {
         navList={navList}
         navItems={navItems}
       />
+      <MainContent />
     </div>
   );
 };
