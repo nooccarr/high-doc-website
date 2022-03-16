@@ -1,17 +1,17 @@
 import React from 'react';
 
-import NavItem from './NavItem';
+import NavContent from './NavContent';
 
-const SidebarNavigation = ({ navList, navItems, changeMainContent }) => {
+const SidebarNavigation = ({ navContentList, navContents, changeMainContent }) => {
 
   return (
     <div className='Nav'>
       <div className='Nav-Content'>
-        {navList.map((navItem, key) => {
+        {navContentList.map((navContent, key) => {
           return (
-            <NavItem
-              navItem={navItem}
-              navSubItems={navItems[navItem]}
+            <NavContent
+              navContent={navContent}
+              navSubContents={navContents[navContent]}
               changeMainContent={changeMainContent}
               key={key}
             />

@@ -1,6 +1,6 @@
 {
-  "navItemList": ["Home", "Destinations", "Audiences", "Workspaces", "Security"],
-  "navItems": {
+  "navContentList": ["Home", "Destinations", "Audiences", "Workspaces", "Security"],
+  "navContents": {
     "Home": [
       {
         "item": "Welcome"

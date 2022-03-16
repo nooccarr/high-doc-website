@@ -1,12 +1,12 @@
 import React from 'react';
 
-const NavItem = ({ navItem, navSubItems=[], changeMainContent }) => {
+const NavContent = ({ navContent, navSubContents=[], changeMainContent }) => {
 
   return (
     <div>
-      <div>{navItem}</div>
-      {navSubItems.map((navSubItem, key) => {
-        const { item } = navSubItem;
+      <div>{navContent}</div>
+      {navSubContents.map((navSubContent, key) => {
+        const { item } = navSubContent;
         return (
           <a
             href='#undefined'
@@ -21,4 +21,4 @@ const NavItem = ({ navItem, navSubItems=[], changeMainContent }) => {
   );
 };
 
-export default NavItem;
+export default NavContent;

@@ -7,8 +7,8 @@ import MainWelcome from './components/MainWelcome';
 import MainOtherDocs from './components/MainOtherDocs';
 
 const App = () => {
-  const [navList, setNavList] = useState([]);
-  const [navItems, setNavItems] = useState({});
+  const [navContentList, setNavContentList] = useState([]);
+  const [navContents, setNavContents] = useState({});
   const [mainContent, setMainContent] = useState('Welcome');
   const [mainSectionHeadings, setMainSectionHeadings] = useState({});
   const [mainWelcomeCards, setMainWelcomeCards] = useState([]);
@@ -20,22 +20,13 @@ const App = () => {
   const getNavSectionMainContentData = () => {
     Axios.get('../../server/sampleData/sampleData.json')
       .then(({ data }) => {
-        const {
-          navItemList,
-          navItems,
-          mainSectionHeadings,
-          mainWelcomeCards
-        } = data;
-        setNavList(navItemList);
-        setNavItems(navItems);
+        const { navContentList, navContents, mainSectionHeadings, mainWelcomeCards } = data;
+        setNavContentList(navContentList);
+        setNavContents(navContents);
         setMainSectionHeadings(mainSectionHeadings);
         setMainWelcomeCards(mainWelcomeCards);
       })
       .catch((err) => console.log(err));
-  };
-
-  const changeMainContent = (item) => {
-    setMainContent(item);
   };
 
   const renderMainContent = () => {
@@ -52,12 +43,23 @@ const App = () => {
     }
   };
 
+  const changeMainContent = (item) => {
+    setMainContent(item);
+  };
+
+  TODO:
+  // styled component (CSS)
+  // mobile
+  // server
+  // handle errors
+  // readme
+
   return (
     <div>
       <TopBar />
       <SidebarNavigation
-        navList={navList}
-        navItems={navItems}
+        navContentList={navContentList}
+        navContents={navContents}
         changeMainContent={changeMainContent}
       />
       <div>{renderMainContent()}</div>
