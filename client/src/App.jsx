@@ -18,7 +18,7 @@ const App = () => {
   }, []);
 
   const getNavSectionMainContentData = () => {
-    Axios.get('../../server/sampleData/sampleData.json')
+    Axios.get('../../server/sampleData/contentData.json')
       .then(({ data }) => {
         const { navContentList, navContents, mainSectionHeadings, mainWelcomeCards } = data;
         setNavContentList(navContentList);
@@ -46,13 +46,6 @@ const App = () => {
   const changeMainContent = (item) => {
     setMainContent(item);
   };
-
-  TODO:
-  // styled component (CSS)
-  // mobile
-  // server
-  // handle errors
-  // readme
 
   return (
     <div>
