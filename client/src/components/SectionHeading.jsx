@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 
-
-const MainSectionHeading = ({ mainSectionHeading={} }) => {
-  const { title, description } = mainSectionHeading;
+const SectionHeading = ({ mainContentHeading={} }) => {
+  const { title, description } = mainContentHeading;
   return (
     <section>
       <h1>{title}</h1>
@@ -12,4 +11,4 @@ const MainSectionHeading = ({ mainSectionHeading={} }) => {
   );
 };
 
-export default MainSectionHeading;
+export default SectionHeading;

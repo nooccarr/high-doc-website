@@ -1,7 +1,7 @@
 import React from 'react';
 
-const DiveDeeperCard = ({ mainDiveDeeperCard }) => {
-  const { thumbnail, title, description, link } = mainDiveDeeperCard;
+const DiveDeeperCard = ({ diveDeeperCard }) => {
+  const { thumbnail, title, description, link } = diveDeeperCard;
   return (
     <div>
       <img src={thumbnail} />

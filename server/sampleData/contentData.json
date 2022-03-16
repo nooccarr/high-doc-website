@@ -3,76 +3,76 @@
   "navContents": {
     "Home": [
       {
-        "item": "Welcome"
+        "content": "Welcome"
       },
       {
-        "item": "Concepts"
+        "content": "Concepts"
       }
     ],
     "Destinations": [
       {
-        "item": "Acoustic"
+        "content": "Acoustic"
       },
       {
-        "item": "Asana"
+        "content": "Asana"
       },
       {
-        "item": "Customer.io"
+        "content": "Customer.io"
       },
       {
-        "item": "Google Ads"
+        "content": "Google Ads"
       },
       {
-        "item": "Pendo"
+        "content": "Pendo"
       },
       {
-        "item": "Rokt"
+        "content": "Rokt"
       },
       {
-        "item": "Segment"
+        "content": "Segment"
       },
       {
-        "item": "Tiktok"
+        "content": "Tiktok"
       },
       {
-        "item": "Zendesk"
+        "content": "Zendesk"
       }
     ],
     "Audiences": [
       {
-        "item": "Overview"
+        "content": "Overview"
       },
       {
-        "item": "Usage"
+        "content": "Usage"
       },
       {
-        "item": "Schema"
+        "content": "Schema"
       },
       {
-        "item": "Sync Templates"
+        "content": "Sync Templates"
       }
     ],
     "Workspaces": [
       {
-        "item": "User Permissions"
+        "content": "User Permissions"
       },
       {
-        "item": "Pricing Information"
+        "content": "Pricing Information"
       }
     ],
     "Security": [
       {
-        "item": "Security Basics"
+        "content": "Security Basics"
       },
       {
-        "item": "Tunnels"
+        "content": "Tunnels"
       },
       {
-        "item": "Single Sign-On (SSO)"
+        "content": "Single Sign-On (SSO)"
       }
     ]
   },
-  "mainSectionHeadings": {
+  "mainContentHeadings": {
     "Welcome": {
       "title": "Hightouch Documentation",
       "description": "Get an overview of Hightouch's features, integrations, and how to use them."
@@ -154,7 +154,7 @@
       "description": "Connect to Hightouch with SSO."
     }
   },
-  "mainDiveDeeperCards": [
+  "diveDeeperCards": [
     {
       "thumbnail": "https://www.master-7rqtwti-od3d6y3dmsppq.us-4.platformsh.site/uploads/Frame_22_459a12290a.png",
       "title": "3 great ways of scheduling a Hightouch sync",

@@ -3,48 +3,48 @@ import Axios from 'axios';
 
 import TopBar from './components/TopBar';
 import SidebarNavigation from './components/SidebarNavigation';
-import MainWelcome from './components/MainWelcome';
-import MainOtherDocs from './components/MainOtherDocs';
+import MainContentWelcome from './components/MainContentWelcome';
+import MainContentOther from './components/MainContentOther';
 
 const App = () => {
   const [navContentList, setNavContentList] = useState([]);
   const [navContents, setNavContents] = useState({});
-  const [mainContent, setMainContent] = useState('Welcome');
-  const [mainSectionHeadings, setMainSectionHeadings] = useState({});
-  const [mainDiveDeeperCards, setMainDiveDeeperCards] = useState([]);
+  const [mainContentView, setMainContentView] = useState('Welcome');
+  const [mainContentHeadings, setMainContentHeadings] = useState({});
+  const [diveDeeperCards, setDiveDeeperCards] = useState([]);
 
   useEffect(() => {
-    getNavSectionMainContentData();
+    getSidebarNavigationMainContentData();
   }, []);
 
-  const getNavSectionMainContentData = () => {
+  const getSidebarNavigationMainContentData = () => {
     Axios.get('../../server/sampleData/contentData.json')
       .then(({ data }) => {
-        const { navContentList, navContents, mainSectionHeadings, mainDiveDeeperCards } = data;
+        const { navContentList, navContents, mainContentHeadings, diveDeeperCards } = data;
         setNavContentList(navContentList);
         setNavContents(navContents);
-        setMainSectionHeadings(mainSectionHeadings);
-        setMainDiveDeeperCards(mainDiveDeeperCards);
+        setMainContentHeadings(mainContentHeadings);
+        setDiveDeeperCards(diveDeeperCards);
       })
       .catch((err) => console.log(err));
   };
 
-  const renderMainContent = () => {
-    const mainSectionHeading = mainSectionHeadings[mainContent];
-    if (mainContent === 'Welcome') {
+  const renderMainContentView = () => {
+    const mainContentHeading = mainContentHeadings[mainContentView];
+    if (mainContentView === 'Welcome') {
       return (
-        <MainWelcome
-          mainSectionHeading={mainSectionHeading}
-          mainDiveDeeperCards={mainDiveDeeperCards}
+        <MainContentWelcome
+          mainContentHeading={mainContentHeading}
+          diveDeeperCards={diveDeeperCards}
         />
       );
     } else {
-      return (<MainOtherDocs mainSectionHeading={mainSectionHeading} />);
+      return (<MainContentOther mainContentHeading={mainContentHeading} />);
     }
   };
 
-  const changeMainContent = (item) => {
-    setMainContent(item);
+  const changeMainContentView = (item) => {
+    setMainContentView(item);
   };
 
   return (
@@ -53,9 +53,9 @@ const App = () => {
       <SidebarNavigation
         navContentList={navContentList}
         navContents={navContents}
-        changeMainContent={changeMainContent}
+        changeMainContentView={changeMainContentView}
       />
-      <div>{renderMainContent()}</div>
+      <div>{renderMainContentView()}</div>
     </div>
   );
 };

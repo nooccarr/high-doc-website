@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 
-import MainSectionHeading from './MainSectionHeading';
+import SectionHeading from './SectionHeading';
 import DiveDeeperCard from './DiveDeeperCard';
 
-const MainWelcome = ({ mainSectionHeading, mainDiveDeeperCards }) => {
+const MainWelcome = ({ mainContentHeading, diveDeeperCards }) => {
   return (
     <main>
-      <MainSectionHeading mainSectionHeading={mainSectionHeading} />
+      <SectionHeading mainContentHeading={mainContentHeading} />
       <section>
         <h2>
           <a href='#undefined'>Dive deeper</a>
         </h2>
         <div>
-          {mainDiveDeeperCards.map((mainDiveDeeperCard, key) => {
+          {diveDeeperCards.map((diveDeeperCard, key) => {
             return (
-              <DiveDeeperCard mainDiveDeeperCard={mainDiveDeeperCard} key={key} />
+              <DiveDeeperCard
+                diveDeeperCard={diveDeeperCard}
+                key={key}
+              />
             );
           })}
         </div>
