@@ -7,22 +7,22 @@ import MainContentWelcome from './components/MainContentWelcome';
 import MainContentOther from './components/MainContentOther';
 
 const App = () => {
-  const [navContentList, setNavContentList] = useState([]);
-  const [navContents, setNavContents] = useState({});
+  const [navItemList, setNavItemList] = useState([]);
+  const [navItems, setNavItems] = useState({});
   const [mainContentView, setMainContentView] = useState('Welcome');
   const [mainContentHeadings, setMainContentHeadings] = useState({});
   const [diveDeeperCards, setDiveDeeperCards] = useState([]);
 
   useEffect(() => {
-    getSidebarNavigationMainContentData();
+    getSidebarNavMainContentData();
   }, []);
 
-  const getSidebarNavigationMainContentData = () => {
+  const getSidebarNavMainContentData = () => {
     Axios.get('../../server/sampleData/contentData.json')
       .then(({ data }) => {
-        const { navContentList, navContents, mainContentHeadings, diveDeeperCards } = data;
-        setNavContentList(navContentList);
-        setNavContents(navContents);
+        const { navItemList, navItems, mainContentHeadings, diveDeeperCards } = data;
+        setNavItemList(navItemList);
+        setNavItems(navItems);
         setMainContentHeadings(mainContentHeadings);
         setDiveDeeperCards(diveDeeperCards);
       })
@@ -51,8 +51,8 @@ const App = () => {
     <div>
       <TopBar />
       <SidebarNavigation
-        navContentList={navContentList}
-        navContents={navContents}
+        navItemList={navItemList}
+        navItems={navItems}
         changeMainContentView={changeMainContentView}
       />
       <div>{renderMainContentView()}</div>

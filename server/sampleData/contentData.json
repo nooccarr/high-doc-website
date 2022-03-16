@@ -1,74 +1,74 @@
 {
-  "navContentList": ["Home", "Destinations", "Audiences", "Workspaces", "Security"],
-  "navContents": {
+  "navItemList": ["Home", "Destinations", "Audiences", "Workspaces", "Security"],
+  "navItems": {
     "Home": [
       {
-        "content": "Welcome"
+        "item": "Welcome"
       },
       {
-        "content": "Concepts"
+        "item": "Concepts"
       }
     ],
     "Destinations": [
       {
-        "content": "Acoustic"
+        "item": "Acoustic"
       },
       {
-        "content": "Asana"
+        "item": "Asana"
       },
       {
-        "content": "Customer.io"
+        "item": "Customer.io"
       },
       {
-        "content": "Google Ads"
+        "item": "Google Ads"
       },
       {
-        "content": "Pendo"
+        "item": "Pendo"
       },
       {
-        "content": "Rokt"
+        "item": "Rokt"
       },
       {
-        "content": "Segment"
+        "item": "Segment"
       },
       {
-        "content": "Tiktok"
+        "item": "Tiktok"
       },
       {
-        "content": "Zendesk"
+        "item": "Zendesk"
       }
     ],
     "Audiences": [
       {
-        "content": "Overview"
+        "item": "Overview"
       },
       {
-        "content": "Usage"
+        "item": "Usage"
       },
       {
-        "content": "Schema"
+        "item": "Schema"
       },
       {
-        "content": "Sync Templates"
+        "item": "Sync Templates"
       }
     ],
     "Workspaces": [
       {
-        "content": "User Permissions"
+        "item": "User Permissions"
       },
       {
-        "content": "Pricing Information"
+        "item": "Pricing Information"
       }
     ],
     "Security": [
       {
-        "content": "Security Basics"
+        "item": "Security Basics"
       },
       {
-        "content": "Tunnels"
+        "item": "Tunnels"
       },
       {
-        "content": "Single Sign-On (SSO)"
+        "item": "Single Sign-On (SSO)"
       }
     ]
   },
