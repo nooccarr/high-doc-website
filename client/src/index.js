@@ -15,6 +15,4 @@ ReactDOM.render(
 // TODO:
 // styled component (CSS)
 // mobile
-// server
-// handle errors
 // readme

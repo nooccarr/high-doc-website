@@ -19,7 +19,7 @@ const App = () => {
   }, []);
 
   const getSidebarNavMainContentData = () => {
-    Axios.get('../../server/sampleData/contentData.json')
+    Axios.get('/contents')
       .then(({ data }) => {
         const { navItemList, navItems, mainContentHeadings, diveDeeperCards } = data;
         setNavItemList(navItemList);

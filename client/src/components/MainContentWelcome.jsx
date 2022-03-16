@@ -4,7 +4,7 @@ import Axios from 'axios';
 import SectionHeading from './SectionHeading';
 import DiveDeeperCard from './DiveDeeperCard';
 
-const MainWelcome = ({ mainContentHeading, diveDeeperCards }) => {
+const MainContentWelcome = ({ mainContentHeading, diveDeeperCards }) => {
   return (
     <main>
       <SectionHeading mainContentHeading={mainContentHeading} />
@@ -27,4 +27,4 @@ const MainWelcome = ({ mainContentHeading, diveDeeperCards }) => {
   );
 };
 
-export default MainWelcome;
+export default MainContentWelcome;
