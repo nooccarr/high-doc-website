@@ -9,9 +9,10 @@ import MainContentOther from './components/MainContentOther';
 const App = () => {
   const [navItemList, setNavItemList] = useState([]);
   const [navItems, setNavItems] = useState({});
-  const [mainContentView, setMainContentView] = useState('Welcome');
+  const [mainContentView, setMainContentView] = useState('');
   const [mainContentHeadings, setMainContentHeadings] = useState({});
   const [diveDeeperCards, setDiveDeeperCards] = useState([]);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     getSidebarNavMainContentData();
@@ -25,8 +26,12 @@ const App = () => {
         setNavItems(navItems);
         setMainContentHeadings(mainContentHeadings);
         setDiveDeeperCards(diveDeeperCards);
+        setMainContentView('Welcome');
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        setError(true);
+        console.log(err);
+      });
   };
 
   const renderMainContentView = () => {
@@ -47,17 +52,28 @@ const App = () => {
     setMainContentView(item);
   };
 
-  return (
-    <div>
-      <TopBar />
-      <SidebarNavigation
-        navItemList={navItemList}
-        navItems={navItems}
-        changeMainContentView={changeMainContentView}
-      />
-      <div>{renderMainContentView()}</div>
-    </div>
-  );
+  if (error) {
+    return (<h1>An error has occurred, try again later</h1>);
+  } else if (!mainContentView) {
+    return (
+      <div>
+        loading..
+        {/* <img /> */}
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <TopBar />
+        <SidebarNavigation
+          navItemList={navItemList}
+          navItems={navItems}
+          changeMainContentView={changeMainContentView}
+        />
+        <div>{renderMainContentView()}</div>
+      </div>
+    );
+  }
 };
 
 export default App;
