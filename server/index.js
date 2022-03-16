@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.static(__dirname + '/../client/dist'));
 
-app.get('/contents', (req, res) => {
+app.get('/contentItems', (req, res) => {
   res.sendFile(
     path.resolve(__dirname, './sampleData/contentData.json'),
     (err) => {

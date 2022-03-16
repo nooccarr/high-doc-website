@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
+import Styled from 'styled-components';
 
 import TopBar from './components/TopBar';
 import SidebarNavigation from './components/SidebarNavigation';
@@ -19,7 +20,7 @@ const App = () => {
   }, []);
 
   const getSidebarNavMainContentData = () => {
-    Axios.get('/contents')
+    Axios.get('/contentItems')
       .then(({ data }) => {
         const { navItemList, navItems, mainContentHeadings, diveDeeperCards } = data;
         setNavItemList(navItemList);
