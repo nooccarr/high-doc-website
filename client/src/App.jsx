@@ -11,7 +11,7 @@ const App = () => {
   const [navContents, setNavContents] = useState({});
   const [mainContent, setMainContent] = useState('Welcome');
   const [mainSectionHeadings, setMainSectionHeadings] = useState({});
-  const [mainWelcomeCards, setMainWelcomeCards] = useState([]);
+  const [mainDiveDeeperCards, setMainDiveDeeperCards] = useState([]);
 
   useEffect(() => {
     getNavSectionMainContentData();
@@ -20,11 +20,11 @@ const App = () => {
   const getNavSectionMainContentData = () => {
     Axios.get('../../server/sampleData/contentData.json')
       .then(({ data }) => {
-        const { navContentList, navContents, mainSectionHeadings, mainWelcomeCards } = data;
+        const { navContentList, navContents, mainSectionHeadings, mainDiveDeeperCards } = data;
         setNavContentList(navContentList);
         setNavContents(navContents);
         setMainSectionHeadings(mainSectionHeadings);
-        setMainWelcomeCards(mainWelcomeCards);
+        setMainDiveDeeperCards(mainDiveDeeperCards);
       })
       .catch((err) => console.log(err));
   };
@@ -35,7 +35,7 @@ const App = () => {
       return (
         <MainWelcome
           mainSectionHeading={mainSectionHeading}
-          mainWelcomeCards={mainWelcomeCards}
+          mainDiveDeeperCards={mainDiveDeeperCards}
         />
       );
     } else {

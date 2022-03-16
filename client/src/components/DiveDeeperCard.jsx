@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Card = ({ mainWelcomeCard }) => {
-  const { thumbnail, title, description, link } = mainWelcomeCard;
+const DiveDeeperCard = ({ mainDiveDeeperCard }) => {
+  const { thumbnail, title, description, link } = mainDiveDeeperCard;
   return (
     <div>
       <img src={thumbnail} />
@@ -13,4 +13,4 @@ const Card = ({ mainWelcomeCard }) => {
   );
 };
 
-export default Card;
+export default DiveDeeperCard;

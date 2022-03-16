@@ -154,7 +154,7 @@
       "description": "Connect to Hightouch with SSO."
     }
   },
-  "mainWelcomeCards": [
+  "mainDiveDeeperCards": [
     {
       "thumbnail": "https://www.master-7rqtwti-od3d6y3dmsppq.us-4.platformsh.site/uploads/Frame_22_459a12290a.png",
       "title": "3 great ways of scheduling a Hightouch sync",
