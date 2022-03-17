@@ -54,7 +54,6 @@ const App = () => {
     return (
       <Router>
         <div>
-          {console.log(mainContentItem)}
           <TopBar />
           <SidebarNavigation
             navItemList={navItemList}
@@ -63,14 +62,12 @@ const App = () => {
           />
           <Switch>
             <Route exact path='/'>
-              WELCOME
               <MainContentWelcome
                 mainContentHeading={mainContentHeading}
                 diveDeeperCards={diveDeeperCards}
               />
             </Route>
             <Route path={route}>
-              {route}
               <MainContentOther mainContentHeading={mainContentHeading} />
             </Route>
           </Switch>
