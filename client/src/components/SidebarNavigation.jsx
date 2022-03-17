@@ -4,7 +4,7 @@ import NavigationItem from './NavigationItem';
 
 const SidebarNavigation = ({ navItemList, navItems, setMainContentItem }) => {
   return (
-    <div className='Nav'>
+    <nav className='Nav'>
       <div className='Nav-Content'>
         {navItemList.map((navItem, key) => {
           return (
@@ -17,7 +17,7 @@ const SidebarNavigation = ({ navItemList, navItems, setMainContentItem }) => {
           );
         })}
       </div>
-    </div>
+    </nav>
   );
 };
 

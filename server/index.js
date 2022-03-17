@@ -17,9 +17,17 @@ app.get('/contentItems', (req, res) => {
   );
 });
 
-app.get('*', (req, res) => {
-  res.sendStatus(404);
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(
+//     path.join(__dirname, '/../client/dist/index.html'),
+//     (err) => {
+//       if (err) {
+//         console.log(err)
+//         res.sendStatus(500);
+//       }
+//     }
+//   );
+// });
 
 const port = 3000;
 app.listen(port, () => {
