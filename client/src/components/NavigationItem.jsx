@@ -1,20 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const NavigationItem = ({ navItem, navSubItems=[], changeMainContentView }) => {
+const NavigationItem = ({ navItem, navSubItems=[], setMainContentItem }) => {
   return (
     <div>
       <div>{navItem}</div>
       {navSubItems.map((navSubItem, key) => {
-        const { item } = navSubItem;
+        const { item, route } = navSubItem;
         return (
-          <a
-            href='#undefined'
+          <Link
+            to={route}
+            onClick={() => setMainContentItem(navSubItem)}
             key={key}
-            onClick={() => changeMainContentView(item)}
           >
             {item}
-          </a>
-        )
+          </Link>
+        );
       })}
     </div>
   );

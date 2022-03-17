@@ -3,72 +3,92 @@
   "navItems": {
     "Home": [
       {
-        "item": "Welcome"
+        "item": "Welcome",
+        "route": "/"
       },
       {
-        "item": "Concepts"
+        "item": "Concepts",
+        "route": "/concepts"
       }
     ],
     "Destinations": [
       {
-        "item": "Acoustic"
+        "item": "Acoustic",
+        "route": "/destinations/acoustic"
       },
       {
-        "item": "Asana"
+        "item": "Asana",
+        "route": "/destinations/asana"
       },
       {
-        "item": "Customer.io"
+        "item": "Customer.io",
+        "route": "/destinations/customerio"
       },
       {
-        "item": "Google Ads"
+        "item": "Google Ads",
+        "route": "/destinations/google"
       },
       {
-        "item": "Pendo"
+        "item": "Pendo",
+        "route": "/destinations/pendo"
       },
       {
-        "item": "Rokt"
+        "item": "Rokt",
+        "route": "/destinations/rokt"
       },
       {
-        "item": "Segment"
+        "item": "Segment",
+        "route": "/destinations/segment"
       },
       {
-        "item": "Tiktok"
+        "item": "Tiktok",
+        "route": "/destinations/tiktok"
       },
       {
-        "item": "Zendesk"
+        "item": "Zendesk",
+        "route": "/destinations/zendesk"
       }
     ],
     "Audiences": [
       {
-        "item": "Overview"
+        "item": "Overview",
+        "route": "/hightouch-audiences/overview"
       },
       {
-        "item": "Usage"
+        "item": "Usage",
+        "route": "/hightouch-audiences/usage"
       },
       {
-        "item": "Schema"
+        "item": "Schema",
+        "route": "/hightouch-audiences/schema"
       },
       {
-        "item": "Sync Templates"
+        "item": "Sync Templates",
+        "route": "/hightouch-audiences/sync-templates"
       }
     ],
     "Workspaces": [
       {
-        "item": "User Permissions"
+        "item": "User Permissions",
+        "route": "/workspaces/permissions"
       },
       {
-        "item": "Pricing Information"
+        "item": "Pricing Information",
+        "route": "/workspaces/pricing"
       }
     ],
     "Security": [
       {
-        "item": "Security Basics"
+        "item": "Security Basics",
+        "route": "/security/securitybasics"
       },
       {
-        "item": "Tunnels"
+        "item": "Tunnels",
+        "route": "/security/tunnel"
       },
       {
-        "item": "Single Sign-On (SSO)"
+        "item": "Single Sign-On (SSO)",
+        "route": "/security/sso"
       }
     ]
   },

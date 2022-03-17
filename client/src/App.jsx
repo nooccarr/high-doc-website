@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Axios from 'axios';
 import Styled from 'styled-components';
 
@@ -10,7 +11,7 @@ import MainContentOther from './components/MainContentOther';
 const App = () => {
   const [navItemList, setNavItemList] = useState([]);
   const [navItems, setNavItems] = useState({});
-  const [mainContentView, setMainContentView] = useState('');
+  const [mainContentItem, setMainContentItem] = useState(null);
   const [mainContentHeadings, setMainContentHeadings] = useState({});
   const [diveDeeperCards, setDiveDeeperCards] = useState([]);
   const [error, setError] = useState(false);
@@ -27,7 +28,10 @@ const App = () => {
         setNavItems(navItems);
         setMainContentHeadings(mainContentHeadings);
         setDiveDeeperCards(diveDeeperCards);
-        setMainContentView('Welcome');
+        setMainContentItem({
+          item: 'Welcome',
+          route: '/'
+        });
       })
       .catch((err) => {
         setError(true);
@@ -35,27 +39,9 @@ const App = () => {
       });
   };
 
-  const renderMainContentView = () => {
-    const mainContentHeading = mainContentHeadings[mainContentView];
-    if (mainContentView === 'Welcome') {
-      return (
-        <MainContentWelcome
-          mainContentHeading={mainContentHeading}
-          diveDeeperCards={diveDeeperCards}
-        />
-      );
-    } else {
-      return (<MainContentOther mainContentHeading={mainContentHeading} />);
-    }
-  };
-
-  const changeMainContentView = (item) => {
-    setMainContentView(item);
-  };
-
   if (error) {
     return (<h1>An error has occurred, try again later</h1>);
-  } else if (!mainContentView) {
+  } else if (!mainContentItem) {
     return (
       <div>
         loading..
@@ -63,16 +49,33 @@ const App = () => {
       </div>
     );
   } else {
+    const { item, route } = mainContentItem;
+    const mainContentHeading = mainContentHeadings[item];
     return (
-      <div>
-        <TopBar />
-        <SidebarNavigation
-          navItemList={navItemList}
-          navItems={navItems}
-          changeMainContentView={changeMainContentView}
-        />
-        <div>{renderMainContentView()}</div>
-      </div>
+      <Router>
+        <div>
+          {console.log(mainContentItem)}
+          <TopBar />
+          <SidebarNavigation
+            navItemList={navItemList}
+            navItems={navItems}
+            setMainContentItem={setMainContentItem}
+          />
+          <Switch>
+            <Route exact path='/'>
+              WELCOME
+              <MainContentWelcome
+                mainContentHeading={mainContentHeading}
+                diveDeeperCards={diveDeeperCards}
+              />
+            </Route>
+            <Route path={route}>
+              {route}
+              <MainContentOther mainContentHeading={mainContentHeading} />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 };
