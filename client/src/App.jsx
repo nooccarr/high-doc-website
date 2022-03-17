@@ -28,10 +28,7 @@ const App = () => {
         setNavItems(navItems);
         setMainContentHeadings(mainContentHeadings);
         setDiveDeeperCards(diveDeeperCards);
-        setMainContentItem({
-          item: 'Welcome',
-          route: '/'
-        });
+        setMainContentItem(mainContentHeadings[window.location.pathname]);
       })
       .catch((err) => {
         setError(true);
@@ -49,8 +46,22 @@ const App = () => {
       </div>
     );
   } else {
-    const { item, route } = mainContentItem;
-    const mainContentHeading = mainContentHeadings[item];
+    const route = window.location.pathname;
+    const mainContentHeading = mainContentHeadings[route];
+
+    const routes = [
+      {
+        path: '/',
+        exact: true,
+        component: () => <MainContentWelcome mainContentHeading={mainContentHeading} diveDeeperCards={diveDeeperCards} />
+      },
+      {
+        path: route,
+        exact: false,
+        component: () => <MainContentOther mainContentHeading={mainContentHeading} />
+      }
+    ];
+
     return (
       <Router>
         <div>
@@ -61,15 +72,17 @@ const App = () => {
             setMainContentItem={setMainContentItem}
           />
           <Switch>
-            <Route exact path='/'>
-              <MainContentWelcome
-                mainContentHeading={mainContentHeading}
-                diveDeeperCards={diveDeeperCards}
-              />
-            </Route>
-            <Route path={route}>
-              <MainContentOther mainContentHeading={mainContentHeading} />
-            </Route>
+            {routes.map((route, index) => {
+              const { path, exact } = route;
+              return (
+                <Route
+                  key={index}
+                  path={path}
+                  exact={exact}
+                  children={<route.component />}
+                />
+              );
+            })}
           </Switch>
         </div>
       </Router>

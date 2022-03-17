@@ -1,11 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
 
-const config = {
+module.exports = {
   entry: './client/src/index.js',
   output: {
     path: path.resolve(__dirname, 'client/dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     rules: [
@@ -29,5 +29,3 @@ const config = {
   },
   mode: 'development'
 };
-
-module.exports = config;
