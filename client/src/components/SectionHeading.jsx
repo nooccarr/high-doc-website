@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 
+import { SectionHeadingWrap } from './SectionHeadingStyles';
+
 const SectionHeading = ({ mainContentHeading={} }) => {
   const { title, description } = mainContentHeading;
   return (
-    <section>
+    <SectionHeadingWrap>
       <h1>{title}</h1>
       <p>{description}</p>
-  </section>
+  </SectionHeadingWrap>
   );
 };
 

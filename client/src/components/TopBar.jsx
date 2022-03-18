@@ -1,7 +1,8 @@
 import React from 'react';
+import { TopBarWrap } from './TopBarStyles';
 
 const TopBar = () => (
-  <div>
+  <TopBarWrap>
     <div>
       <span>hightouch</span>
       <div></div>
@@ -15,7 +16,7 @@ const TopBar = () => (
         <button>Login</button>
       </a>
     </div>
-  </div>
+  </TopBarWrap>
 );
 
 export default TopBar;

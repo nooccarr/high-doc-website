@@ -7,13 +7,14 @@ const NavigationItem = ({ navItem, navSubItems=[], setMainContentItem }) => (
     {navSubItems.map((navSubItem, key) => {
       const { item, route } = navSubItem;
       return (
-        <Link
-          to={route}
-          onClick={() => setMainContentItem(navSubItem)}
-          key={key}
-        >
-          {item}
-        </Link>
+        <li key={key}>
+          <Link
+            to={route}
+            onClick={() => setMainContentItem(navSubItem)}
+          >
+            {item}
+          </Link>
+        </li>
       );
     })}
   </div>
