@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Axios from 'axios';
-import Styled from 'styled-components';
+import styled from 'styled-components';
 
 import TopBar from './components/TopBar';
 import SidebarNavigation from './components/SidebarNavigation';
