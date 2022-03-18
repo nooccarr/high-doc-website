@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Axios from 'axios';
-import styled from 'styled-components';
 
 import TopBar from './components/TopBar';
 import SidebarNavigation from './components/SidebarNavigation';
 import MainContentWelcome from './components/MainContentWelcome';
 import MainContentOther from './components/MainContentOther';
+import { AppWrap } from './AppStyle';
+
 
 const App = () => {
   const [navItemList, setNavItemList] = useState([]);
@@ -70,11 +71,11 @@ const App = () => {
       </div>
     );
   } else if (!mainContentHeadings.hasOwnProperty(path)) {
-    return (<h1>404 page not found</h1>);
+    return (<h1>404 It seems like you found a page that doesn't exist.</h1>);
   } else {
     return (
       <Router>
-        <div>
+        <AppWrap>
           <TopBar />
           <SidebarNavigation
             navItemList={navItemList}
@@ -94,7 +95,7 @@ const App = () => {
               );
             })}
           </Switch>
-        </div>
+        </AppWrap>
       </Router>
     );
   }

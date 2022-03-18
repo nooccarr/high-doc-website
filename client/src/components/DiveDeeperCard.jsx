@@ -1,14 +1,16 @@
 import React from 'react';
+import { DiveDeeperCardWrap } from './DiveDeeperCardStyles';
+
 
 const DiveDeeperCard = ({ diveDeeperCard }) => {
   const { thumbnail, title, description, link } = diveDeeperCard;
   return (
-    <div>
+    <DiveDeeperCardWrap>
       <img src={thumbnail} />
       <span>{title}</span>
       <p>{description}</p>
       <a href={link}>Read article</a>
-    </div>
+    </DiveDeeperCardWrap>
 
   );
 };
