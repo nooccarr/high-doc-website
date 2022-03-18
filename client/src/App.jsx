@@ -28,13 +28,37 @@ const App = () => {
         setNavItems(navItems);
         setMainContentHeadings(mainContentHeadings);
         setDiveDeeperCards(diveDeeperCards);
-        setMainContentItem(mainContentHeadings[window.location.pathname]);
+        setMainContentItem({});
       })
       .catch((err) => {
         setError(true);
         console.log(err);
       });
   };
+
+  const path = window.location.pathname;
+  const mainContentHeading = mainContentHeadings[path];
+  const routes = [
+    {
+      path: '/',
+      exact: true,
+      component: () => (
+        <MainContentWelcome
+          mainContentHeading={mainContentHeading}
+          diveDeeperCards={diveDeeperCards}
+        />
+      )
+    },
+    {
+      path: path,
+      exact: true,
+      component: () => (
+        <MainContentOther
+          mainContentHeading={mainContentHeading}
+        />
+      )
+    }
+  ];
 
   if (error) {
     return (<h1>An error has occurred, try again later</h1>);
@@ -45,32 +69,9 @@ const App = () => {
         {/* <img /> */}
       </div>
     );
+  } else if (!mainContentHeadings.hasOwnProperty(path)) {
+    return (<h1>404 page not found</h1>);
   } else {
-    const route = window.location.pathname;
-    const mainContentHeading = mainContentHeadings[route];
-
-    const routes = [
-      {
-        path: '/',
-        exact: true,
-        component: () => (
-          <MainContentWelcome
-            mainContentHeading={mainContentHeading}
-            diveDeeperCards={diveDeeperCards}
-          />
-        )
-      },
-      {
-        path: route,
-        exact: true,
-        component: () => (
-          <MainContentOther
-            mainContentHeading={mainContentHeading}
-          />
-        )
-      }
-    ];
-
     return (
       <Router>
         <div>
@@ -82,7 +83,7 @@ const App = () => {
           />
           <Switch>
             {routes.map((route, index) => {
-              const { path, exact } = route;
+              let { path, exact } = route;
               return (
                 <Route
                   key={index}
