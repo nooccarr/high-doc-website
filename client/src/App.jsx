@@ -53,12 +53,21 @@ const App = () => {
       {
         path: '/',
         exact: true,
-        component: () => <MainContentWelcome mainContentHeading={mainContentHeading} diveDeeperCards={diveDeeperCards} />
+        component: () => (
+          <MainContentWelcome
+            mainContentHeading={mainContentHeading}
+            diveDeeperCards={diveDeeperCards}
+          />
+        )
       },
       {
         path: route,
-        exact: false,
-        component: () => <MainContentOther mainContentHeading={mainContentHeading} />
+        exact: true,
+        component: () => (
+          <MainContentOther
+            mainContentHeading={mainContentHeading}
+          />
+        )
       }
     ];
 
