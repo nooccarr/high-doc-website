@@ -85,19 +85,21 @@ const App = () => {
               navItems={navItems}
               setMainContentItem={setMainContentItem}
             />
-            <Switch>
-              {routes.map((route, index) => {
-                let { path, exact } = route;
-                return (
-                  <Route
-                    key={index}
-                    path={path}
-                    exact={exact}
-                    children={<route.component />}
-                  />
-                );
-              })}
-            </Switch>
+            <main>
+              <Switch>
+                {routes.map((route, index) => {
+                  let { path, exact } = route;
+                  return (
+                    <Route
+                      key={index}
+                      path={path}
+                      exact={exact}
+                      children={<route.component />}
+                    />
+                  );
+                })}
+              </Switch>
+            </main>
           </NavContentWrap>
         </AppWrap>
       </Router>

@@ -1,4 +1,6 @@
 import React from 'react';
+import SignUpLoginButton from './SignUpLoginButton';
+
 import { TopBarWrap } from './TopBarStyles';
 
 const TopBar = () => (
@@ -8,10 +10,7 @@ const TopBar = () => (
       <div></div>
       <span className='docs'>docs</span>
     </div>
-    <div>
-      <button className='signup'>Sign up</button>
-      <button className='login'>Login</button>
-    </div>
+    <SignUpLoginButton />
   </TopBarWrap>
 );
 

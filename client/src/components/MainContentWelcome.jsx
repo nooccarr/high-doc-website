@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
 import Axios from 'axios';
 
 import SectionHeading from './SectionHeading';
 import DiveDeeperCard from './DiveDeeperCard';
 
+import { MainContentWelcomeWrap } from './MainContentWelcomeStyles';
+
 const MainContentWelcome = ({ mainContentHeading, diveDeeperCards }) => (
-  <main>
+  <Fragment>
     <SectionHeading mainContentHeading={mainContentHeading} />
-    <section>
-      <h2>
-        <a href='#undefined'>Dive deeper</a>
-      </h2>
-      <div>
+    <MainContentWelcomeWrap>
+      <h4>Dive deeper...</h4>
+      <div className='cards-container'>
         {diveDeeperCards.map((diveDeeperCard, key) => {
           return (
             <DiveDeeperCard
@@ -21,8 +21,8 @@ const MainContentWelcome = ({ mainContentHeading, diveDeeperCards }) => (
           );
         })}
       </div>
-    </section>
-  </main>
+    </MainContentWelcomeWrap>
+  </Fragment>
 );
 
 export default MainContentWelcome;

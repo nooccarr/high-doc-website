@@ -13,6 +13,7 @@ render(
 );
 
 // TODO:
-// styled component (CSS)
+// styled component: main content
 // mobile
+// lighthouse
 // readme
