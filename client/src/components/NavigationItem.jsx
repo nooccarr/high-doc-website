@@ -1,7 +1,7 @@
-import React, { fragment } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-import NavigationIcon from './NavigationIcon';
+import { renderSvg } from '../files/svgs';
 
 import { NavigationItemWrap } from './NavigationItemStyles';
 
@@ -9,7 +9,7 @@ const NavigationItem = ({ navItem, navSubItems=[], setMainContentItem }) => (
   <NavigationItemWrap>
     <ul>
       <div>
-        <NavigationIcon navItem={navItem} />
+        {renderSvg[navItem]}
         <h2>{navItem}</h2>
       </div>
       {navSubItems.map((navSubItem, key) => {
@@ -28,6 +28,5 @@ const NavigationItem = ({ navItem, navSubItems=[], setMainContentItem }) => (
     </ul>
   </NavigationItemWrap>
 );
-
 
 export default NavigationItem;

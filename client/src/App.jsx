@@ -11,7 +11,6 @@ import { SpinnerWrap } from './SpinnerStyles';
 import { AppWrap } from './AppStyles';
 import { NavContentWrap } from './components/NavContentStyles';
 
-
 const App = () => {
   const [navItemList, setNavItemList] = useState([]);
   const [navItems, setNavItems] = useState({});
@@ -19,9 +18,11 @@ const App = () => {
   const [mainContentHeadings, setMainContentHeadings] = useState({});
   const [diveDeeperCards, setDiveDeeperCards] = useState([]);
   const [error, setError] = useState(false);
+  const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     getSidebarNavMainContentData();
+    window.addEventListener('resize', () => setWidth(window.innerWidth));
   }, []);
 
   const getSidebarNavMainContentData = () => {
@@ -57,9 +58,7 @@ const App = () => {
       path: path,
       exact: true,
       component: () => (
-        <MainContentOther
-          mainContentHeading={mainContentHeading}
-        />
+        <MainContentOther mainContentHeading={mainContentHeading}/>
       )
     }
   ];
@@ -84,6 +83,7 @@ const App = () => {
       <Router>
         <AppWrap>
           <TopBar />
+          <Test />
           <NavContentWrap>
             <SidebarNavigation
               navItemList={navItemList}

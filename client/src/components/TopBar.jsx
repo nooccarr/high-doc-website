@@ -1,4 +1,5 @@
 import React from 'react';
+
 import SignUpLoginButton from './SignUpLoginButton';
 
 import { TopBarWrap } from './TopBarStyles';

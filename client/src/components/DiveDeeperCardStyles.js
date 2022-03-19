@@ -16,6 +16,7 @@ export const DiveDeeperCardWrap = styled.div`
 
   img {
     border-radius: 6px;
+    max-width: 754px;
     width: 100%;
     margin-bottom: 24px;
   }

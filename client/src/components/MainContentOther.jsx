@@ -1,11 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import SectionHeading from './SectionHeading';
 
 const MainContentOther = ({ mainContentHeading }) => (
-  <Fragment>
-    <SectionHeading mainContentHeading={mainContentHeading} />
-  </Fragment>
+  <SectionHeading mainContentHeading={mainContentHeading} />
 );
 
 export default MainContentOther;
