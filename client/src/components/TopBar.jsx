@@ -4,17 +4,13 @@ import { TopBarWrap } from './TopBarStyles';
 const TopBar = () => (
   <TopBarWrap>
     <div>
-      <span>hightouch</span>
+      <span className='hightouch'>hightouch</span>
       <div></div>
-      <span>docs</span>
+      <span className='docs'>docs</span>
     </div>
     <div>
-      <a href='https://app.hightouch.io/signup'>
-        <button>Sign up</button>
-      </a>
-      <a href='https://app.hightouch.io/login'>
-        <button>Login</button>
-      </a>
+      <button className='signup'>Sign up</button>
+      <button className='login'>Login</button>
     </div>
   </TopBarWrap>
 );

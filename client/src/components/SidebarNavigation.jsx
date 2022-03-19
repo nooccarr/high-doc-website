@@ -1,20 +1,19 @@
 import React from 'react';
 
 import NavigationItem from './NavigationItem';
-import { SidebarNavigationWrap } from './SidebarNavigationStyle';
+import { SidebarNavigationWrap } from './SidebarNavigationStyles';
 
 const SidebarNavigation = ({ navItemList, navItems, setMainContentItem }) => (
   <SidebarNavigationWrap>
-    <div className='Nav-Content'>
+    <div className='nav-content'>
       {navItemList.map((navItem, key) => {
         return (
-          <ul key={key}>
-            <NavigationItem
-              navItem={navItem}
-              navSubItems={navItems[navItem]}
-              setMainContentItem={setMainContentItem}
-            />
-          </ul>
+          <NavigationItem
+            navItem={navItem}
+            navSubItems={navItems[navItem]}
+            setMainContentItem={setMainContentItem}
+            key={key}
+          />
         );
       })}
     </div>

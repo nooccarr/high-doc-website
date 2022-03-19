@@ -6,7 +6,9 @@ import TopBar from './components/TopBar';
 import SidebarNavigation from './components/SidebarNavigation';
 import MainContentWelcome from './components/MainContentWelcome';
 import MainContentOther from './components/MainContentOther';
+
 import { AppWrap } from './AppStyle';
+import { NavContentWrap } from './components/NavContentStyles';
 
 
 const App = () => {
@@ -77,24 +79,26 @@ const App = () => {
       <Router>
         <AppWrap>
           <TopBar />
-          <SidebarNavigation
-            navItemList={navItemList}
-            navItems={navItems}
-            setMainContentItem={setMainContentItem}
-          />
-          <Switch>
-            {routes.map((route, index) => {
-              let { path, exact } = route;
-              return (
-                <Route
-                  key={index}
-                  path={path}
-                  exact={exact}
-                  children={<route.component />}
-                />
-              );
-            })}
-          </Switch>
+          <NavContentWrap>
+            <SidebarNavigation
+              navItemList={navItemList}
+              navItems={navItems}
+              setMainContentItem={setMainContentItem}
+            />
+            <Switch>
+              {routes.map((route, index) => {
+                let { path, exact } = route;
+                return (
+                  <Route
+                    key={index}
+                    path={path}
+                    exact={exact}
+                    children={<route.component />}
+                  />
+                );
+              })}
+            </Switch>
+          </NavContentWrap>
         </AppWrap>
       </Router>
     );
