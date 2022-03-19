@@ -7,7 +7,8 @@ import SidebarNavigation from './components/SidebarNavigation';
 import MainContentWelcome from './components/MainContentWelcome';
 import MainContentOther from './components/MainContentOther';
 
-import { AppWrap } from './AppStyle';
+import { SpinnerWrap } from './SpinnerStyles';
+import { AppWrap } from './AppStyles';
 import { NavContentWrap } from './components/NavContentStyles';
 
 
@@ -66,11 +67,15 @@ const App = () => {
   if (error) {
     return (<h1>An error has occurred, try again later</h1>);
   } else if (!mainContentItem) {
+    let items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     return (
-      <div>
-        loading..
-        {/* <img /> */}
-      </div>
+      <SpinnerWrap>
+        <div className="container">
+          {items.map((item, key) => (
+            <div className={`item-${item}`} key={key}><div></div></div>
+          ))}
+        </div>
+      </SpinnerWrap>
     );
   } else if (!mainContentHeadings.hasOwnProperty(path)) {
     return (<h1>404 It seems like you found a page that doesn't exist.</h1>);
