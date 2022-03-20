@@ -18,6 +18,7 @@ export const DiveDeeperCardWrap = styled.div`
     border-radius: 6px;
     max-width: 754px;
     width: 100%;
+    height: auto;
     margin-bottom: 24px;
   }
 

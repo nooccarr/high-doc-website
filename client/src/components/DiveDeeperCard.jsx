@@ -10,7 +10,7 @@ const DiveDeeperCard = ({ diveDeeperCard }) => {
 
   return (
     <DiveDeeperCardWrap>
-      <img src={thumbnail} />
+      <img src={thumbnail} alt='Dive deeper card image.' />
       <span className='title'>{title}</span>
       <p>{description}</p>
       <div className='read-article-container'>
