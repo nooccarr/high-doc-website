@@ -1,7 +1,9 @@
 const express = require('express');
+const compression = require('compression');
 const path = require('path');
 const app = express();
 
+app.use(compression());
 app.use(express.static('client/dist'));
 
 app.get('/contentItems', (req, res) => {

@@ -16,7 +16,7 @@ export const SectionHeadingWrap = styled.section`
     color:rgba(15, 24, 37, 0.9);
   }
 
-  h5 {
+  p {
     font: Inter;
     font-weight: 500;
     font-size: 15.75px;

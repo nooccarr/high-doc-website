@@ -13,7 +13,7 @@ const SectionHeading = ({ mainContentHeading={} }) => {
     <SectionHeadingWrap>
       {BookIcon}
       <h1>{title}</h1>
-      <h5>{description}</h5>
+      <p>{description}</p>
     </SectionHeadingWrap>
   );
 };
