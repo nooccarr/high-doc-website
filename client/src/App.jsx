@@ -1,39 +1,48 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext, Fragment } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Axios from 'axios';
 
+import Spinner from './Spinner';
 import TopBar from './components/TopBar';
+import SignUpLoginButton from './components/SignUpLoginButton';
 import SidebarNavigation from './components/SidebarNavigation';
 import MainContentWelcome from './components/MainContentWelcome';
 import MainContentOther from './components/MainContentOther';
 
-import { SpinnerWrap } from './SpinnerStyles';
+import { ViewContext } from './contexts/ViewContext';
+
 import { AppWrap } from './AppStyles';
 import { NavContentWrap } from './components/NavContentStyles';
 
 const App = () => {
   const [navItemList, setNavItemList] = useState([]);
   const [navItems, setNavItems] = useState({});
-  const [mainContentItem, setMainContentItem] = useState(null);
+  const [mainContentItem, setMainContentItem] = useState({});
   const [mainContentHeadings, setMainContentHeadings] = useState({});
   const [diveDeeperCards, setDiveDeeperCards] = useState([]);
   const [error, setError] = useState(false);
-  const [width, setWidth] = useState(window.innerWidth);
+  const [view, setView] = useState(null);
+  const [showMobileNav, setShowMobileNav] = useState(false);
 
   useEffect(() => {
     getSidebarNavMainContentData();
-    window.addEventListener('resize', () => setWidth(window.innerWidth));
+    window.addEventListener('resize', () => {
+      const { innerWidth } = window;
+      updateWidth(innerWidth);
+      innerWidth >= 800 && setShowMobileNav(false);
+    });
   }, []);
 
   const getSidebarNavMainContentData = () => {
     Axios.get('/contentItems')
       .then(({ data }) => {
         const { navItemList, navItems, mainContentHeadings, diveDeeperCards } = data;
+        const { innerWidth } = window;
         setNavItemList(navItemList);
         setNavItems(navItems);
         setMainContentHeadings(mainContentHeadings);
         setDiveDeeperCards(diveDeeperCards);
-        setMainContentItem({});
+        updateWidth(innerWidth);
       })
       .catch((err) => {
         setError(true);
@@ -41,8 +50,75 @@ const App = () => {
       });
   };
 
-  const path = window.location.pathname;
-  const mainContentHeading = mainContentHeadings[path];
+  const updateWidth = (width) => {
+    width < 800 ? setView('mobile') : setView('desktop');
+  };
+
+  const toggleMobileNav = () => {
+    setShowMobileNav(!showMobileNav);
+  };
+
+  const renderTopBarRightContent = () => {
+    if (view === 'desktop') {
+      return (<SignUpLoginButton />);
+    } else if (showMobileNav === false) {
+      return (
+        <div onClick={toggleMobileNav}>
+          hamburger
+        </div>);
+    } else {
+      return (
+        <div onClick={toggleMobileNav}>
+          X
+        </div>
+      );
+    }
+  };
+
+  const renderSideNavMainContent = () => {
+    const sections = {
+      sidebarNavigation: <SidebarNavigation
+        navItemList={navItemList}
+        navItems={navItems}
+        setMainContentItem={setMainContentItem}
+        showMobileNav={showMobileNav}
+        toggleMobileNav={toggleMobileNav}
+      />,
+      mainContent: <main>
+        <Switch>
+          {routes.map((route, index) => {
+            const { path, exact } = route;
+            return (
+              <Route
+                key={index}
+                path={path}
+                exact={exact}
+                children={<route.component />}
+              />
+            );
+          })}
+        </Switch>
+      </main>
+    };
+
+    const { sidebarNavigation, mainContent } = sections;
+    if (view === 'desktop') {
+      return (
+        <Fragment>
+          {sidebarNavigation}
+          {mainContent}
+        </Fragment>
+      );
+    } else if (showMobileNav === false) {
+      return (mainContent);
+    } else {
+      return (sidebarNavigation);
+    }
+  }
+
+  const { pathname } = window.location;
+  const mainContentHeading = mainContentHeadings[pathname];
+
   const routes = [
     {
       path: '/',
@@ -55,7 +131,7 @@ const App = () => {
       )
     },
     {
-      path: path,
+      path: pathname,
       exact: true,
       component: () => (
         <MainContentOther mainContentHeading={mainContentHeading}/>
@@ -64,50 +140,25 @@ const App = () => {
   ];
 
   if (error) {
-    return (<h1>An error has occurred, try again later</h1>);
-  } else if (!mainContentItem) {
-    let items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    return (
-      <SpinnerWrap>
-        <div className="container">
-          {items.map((item, key) => (
-            <div className={`item-${item}`} key={key}><div></div></div>
-          ))}
-        </div>
-      </SpinnerWrap>
-    );
-  } else if (!mainContentHeadings.hasOwnProperty(path)) {
-    return (<h1>404 It seems like you found a page that doesn't exist.</h1>);
+    return (<h2>An error has occurred, try again later.</h2>);
+  } else if (!view) {
+    return (<Spinner />);
+  } else if (!mainContentHeadings.hasOwnProperty(pathname)) {
+    return (<h2>404 It seems like you found a page that doesn't exist.</h2>);
   } else {
     return (
-      <Router>
-        <AppWrap>
-          <TopBar />
-          <Test />
-          <NavContentWrap>
-            <SidebarNavigation
-              navItemList={navItemList}
-              navItems={navItems}
-              setMainContentItem={setMainContentItem}
-            />
-            <main>
-              <Switch>
-                {routes.map((route, index) => {
-                  let { path, exact } = route;
-                  return (
-                    <Route
-                      key={index}
-                      path={path}
-                      exact={exact}
-                      children={<route.component />}
-                    />
-                  );
-                })}
-              </Switch>
-            </main>
-          </NavContentWrap>
-        </AppWrap>
-      </Router>
+      <ViewContext.Provider value={view}>
+        {console.log(showMobileNav)}
+        {console.log(view)}
+        <Router>
+          <AppWrap>
+            <TopBar renderTopBarRightContent={renderTopBarRightContent} />
+            <NavContentWrap>
+              {renderSideNavMainContent()}
+            </NavContentWrap>
+          </AppWrap>
+        </Router>
+      </ViewContext.Provider>
     );
   }
 };

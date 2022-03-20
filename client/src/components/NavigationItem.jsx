@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+
+import { ViewContext } from '../contexts/ViewContext';
 
 import { renderSvg } from '../files/svgs';
 
 import { NavigationItemWrap } from './NavigationItemStyles';
 
-const NavigationItem = ({ navItem, navSubItems=[], setMainContentItem }) => (
+const NavigationItem = ({ navItem, navSubItems=[], setMainContentItem, toggleMobileNav }) => {
+  const view = useContext(ViewContext);
+
+  return (
   <NavigationItemWrap>
     <ul>
       <div>
@@ -18,7 +23,10 @@ const NavigationItem = ({ navItem, navSubItems=[], setMainContentItem }) => (
           <li key={key}>
             <Link
               to={route}
-              onClick={() => setMainContentItem(navSubItem)}
+              onClick={() => {
+                setMainContentItem(navSubItem);
+                if (view === 'mobile') toggleMobileNav();
+              }}
             >
               {item}
             </Link>
@@ -28,5 +36,6 @@ const NavigationItem = ({ navItem, navSubItems=[], setMainContentItem }) => (
     </ul>
   </NavigationItemWrap>
 );
+}
 
 export default NavigationItem;

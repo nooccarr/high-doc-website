@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 
+
+
 export const SidebarNavigationWrap = styled.nav`
-  margin-right: 16px;
+  .nav-container {
+    margin-right: 16px;
+    // display: none;
+    position: sticky;
+    height: 100vh;
+    overflow: auto;
+    padding-top: 8px;
 
-  display: none;
-
-
-  position: sticky;
-
-  height: 100vh;
-  overflow: auto;
-  padding-top: 8px;
-
-  @media (min-width: 800px) {
-    display: grid;
+    @media (min-width: 800px) {
+      display: grid;
+    }
   }
 
   .nav-content {
