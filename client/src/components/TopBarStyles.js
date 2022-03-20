@@ -8,14 +8,13 @@ export const TopBarWrap = styled.div`
   outline: 1px solid #D4D9DF;
   outline-offset: -1px;
 
-  div:first-child {
+  .top-bar-left {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
   }
 
-  div > span {
+  .top-bar-left > span {
     font: Proxima Nova;
     font-weight: 700;
     font-size: 21px;
@@ -30,10 +29,18 @@ export const TopBarWrap = styled.div`
     color: rgba(15, 24, 37, 0.42);
   }
 
-  div > div {
+  .vertical-line {
     width: 20.25px;
     height: 1px;
     transform: rotate(-90deg);
     background: #D4D9DF;
+  }
+
+  .top-bar-right {
+    display: flex;
+  }
+
+  .top-bar-buttons-spacer {
+    width: 14px;
   }
 `;

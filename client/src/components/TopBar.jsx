@@ -4,12 +4,14 @@ import { TopBarWrap } from './TopBarStyles';
 
 const TopBar = ({ renderTopBarRightContent }) => (
   <TopBarWrap>
-    <div>
+    <div className='top-bar-left'>
       <span className='hightouch'>hightouch</span>
-      <div></div>
+      <div className='vertical-line'></div>
       <span className='docs'>docs</span>
     </div>
-    {renderTopBarRightContent()}
+    <div className='top-bar-right'>
+      {renderTopBarRightContent()}
+    </div>
   </TopBarWrap>
 );
 

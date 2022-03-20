@@ -4,12 +4,15 @@ import Axios from 'axios';
 
 import Spinner from './Spinner';
 import TopBar from './components/TopBar';
-import SignUpLoginButton from './components/SignUpLoginButton';
+import SignUpButton from './components/SignUpButton';
+import LoginButton from './components/LoginButton';
 import SidebarNavigation from './components/SidebarNavigation';
 import MainContentWelcome from './components/MainContentWelcome';
 import MainContentOther from './components/MainContentOther';
 
 import { ViewContext } from './contexts/ViewContext';
+
+import { renderSvg } from './files/svgs';
 
 import { AppWrap } from './AppStyles';
 import { NavContentWrap } from './components/NavContentStyles';
@@ -60,16 +63,30 @@ const App = () => {
 
   const renderTopBarRightContent = () => {
     if (view === 'desktop') {
-      return (<SignUpLoginButton />);
-    } else if (showMobileNav === false) {
       return (
-        <div onClick={toggleMobileNav}>
-          hamburger
+        <Fragment>
+          <SignUpButton />
+          <div className='top-bar-buttons-spacer'></div>
+          <LoginButton />
+        </Fragment>
+      );
+    } else if (showMobileNav === false) {
+      const { HamburgerButton } = renderSvg;
+      return (
+        <div
+          className='hamburger-button'
+          onClick={toggleMobileNav}
+        >
+          {HamburgerButton}
         </div>);
     } else {
+      const { XButton } = renderSvg;
       return (
-        <div onClick={toggleMobileNav}>
-          X
+        <div
+        className='x-button'
+          onClick={toggleMobileNav}
+        >
+          {XButton}
         </div>
       );
     }
@@ -148,8 +165,6 @@ const App = () => {
   } else {
     return (
       <ViewContext.Provider value={view}>
-        {console.log(showMobileNav)}
-        {console.log(view)}
         <Router>
           <AppWrap>
             <TopBar renderTopBarRightContent={renderTopBarRightContent} />

@@ -5,7 +5,6 @@ import styled from 'styled-components';
 export const SidebarNavigationWrap = styled.nav`
   .nav-container {
     margin-right: 16px;
-    // display: none;
     position: sticky;
     height: 100vh;
     overflow: auto;

@@ -1,7 +1,8 @@
 import React, { Fragment, useContext } from 'react';
 
 import NavigationItem from './NavigationItem';
-import SignUpLoginButton from './SignUpLoginButton';
+import SignUpButton from './SignUpButton';
+import LoginButton from './LoginButton';
 
 import { ViewContext } from '../contexts/ViewContext';
 
@@ -12,7 +13,12 @@ const SidebarNavigation = ({ navItemList, navItems, setMainContentItem, showMobi
 
   const renderSignUpLoginButton = () => {
     if (view === 'mobile' && showMobileNav) {
-      return (<SignUpLoginButton />);
+      return (
+        <div className='sidebar-signup-login-container'>
+          <SignUpButton />
+          <LoginButton />
+        </div>
+      );
     }
   };
 
