@@ -176,12 +176,12 @@
   },
   "diveDeeperCards": [
     {
-      "thumbnail": "https://www.master-7rqtwti-od3d6y3dmsppq.us-4.platformsh.site/uploads/Frame_22_459a12290a.png",
+      "thumbnail": "./images/Frame_22_459a12290a.png",
       "title": "3 great ways of scheduling a Hightouch sync",
       "description": "We've got three great ways of integrating Hightouch with your existing workflows: Airflow Operators, dbt Cloud integrations, and Webhook APIs."
     },
     {
-      "thumbnail": "https://www.master-7rqtwti-od3d6y3dmsppq.us-4.platformsh.site/uploads/Data_Integration_The_Definitive_Guide_852b8c6bbb.png",
+      "thumbnail": "./images/Data_Integration_The_Definitive_Guide_852b8c6bbb.png",
       "title": "Data Integration: The Definitive Guide",
       "description": "Data integration is the process of moving data between databases internal, external, or both. Read this guide to learn about all the integration technologies and understand how data moves through each of them."
     }
