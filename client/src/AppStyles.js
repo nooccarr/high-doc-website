@@ -18,7 +18,6 @@ export const AppWrap = styled.div`
   }
 
   .sidebar-signup-login-container {
-    width: 743px;
     display: flex;
   }
   .sidebar-signup-login-container > button {
