@@ -10,7 +10,7 @@ const MainContentWelcome = ({ mainContentHeading, diveDeeperCards }) => (
   <Fragment>
     <SectionHeading mainContentHeading={mainContentHeading} />
     <MainContentWelcomeWrap>
-      <span>Dive deeper...</span>
+      <h2>Dive deeper...</h2>
       <div className='cards-container'>
         {diveDeeperCards.map((diveDeeperCard, key) => {
           return (

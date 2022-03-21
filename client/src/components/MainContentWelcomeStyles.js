@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
 export const MainContentWelcomeWrap = styled.section`
-  padding-top: 24px;
 
-  span {
+
+  h2 {
+    margin: 0;
+    padding: 24px 0px;
     font: Inter;
     font-weight: 600;
     font-size: 17.72px;
