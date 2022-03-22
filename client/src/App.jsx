@@ -83,7 +83,7 @@ const App = () => {
       const { XButton } = renderSvg;
       return (
         <div
-        className='x-button'
+          className='x-button'
           onClick={toggleMobileNav}
         >
           {XButton}
