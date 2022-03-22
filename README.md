@@ -56,10 +56,13 @@ npm run start-dev
 
 ![Hightouch Clone Demo](readme_assets/main.gif)
 
-
 ## Running
 
 Open [Hightouch Clone](https://hightouch-clone.herokuapp.com) in the browser.
+
+## Lighthouse Score
+
+![Lighthouse Score](readme_assets/lighthouse.png)
 
 ## Future Implementations
 
