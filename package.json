@@ -4,9 +4,12 @@
   "description": "Implement a minimal design of the Hightouch's documentation website.",
   "main": "index.js",
   "scripts": {
-    "clean": "rm ./client/dist/bundle.js",
+    "clean": "rm client/dist/bundle.js",
     "build-dev": "webpack --mode development --watch",
-    "start": "nodemon ./server/index.js --watch"
+    "start-dev": "nodemon server/index.js --watch",
+    "build": "webpack --config webpack.prod.js",
+    "start": "node server/index.js",
+    "heroku-postbuild": "npm install && npm run build"
   },
   "author": "Soohyun Lim",
   "license": "ISC",
