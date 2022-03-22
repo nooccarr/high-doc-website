@@ -6,7 +6,6 @@ export const DiveDeeperCardWrap = styled.div`
   border-radius: 8px;
   padding: 12px 12px 30px 12px;
 
-  font: Inter;
   color:rgba(15, 24, 37, 0.9);
 
   :hover {
@@ -23,16 +22,12 @@ export const DiveDeeperCardWrap = styled.div`
   }
 
   .title {
-    font-weight: 600;
-    font-size: 15.75px;
-    line-height: 16.38px;
+    font: 600 15.75px/16.38px Inter;
     letter-spacing: 0.3px;
   }
 
   p {
-    font-weight: 500;
-    font-size: 12.44px;
-    line-height: 20px;
+    font: 500 12.44px/20px Inter;
     margin-bottom: 24px;
   }
 
@@ -42,9 +37,7 @@ export const DiveDeeperCardWrap = styled.div`
   }
 
   .read-article-container > span {
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 16.24px;
+    font: 600 14px/16.24px Inter;
     letter-spacing: 0.2px;
     color: rgba(15, 24, 37, 0.42);
     margin-right: 4px;

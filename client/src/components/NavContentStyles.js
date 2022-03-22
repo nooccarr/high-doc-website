@@ -6,11 +6,15 @@ export const NavContentWrap = styled.div`
   display: grid;
   max-width: 1440px;
 
-  @media (min-width: 800px) {
-    grid-template-columns: 252px 1fr;
+  main {
+    padding: 24px;
   }
 
-  main {
-    padding: 40px 48px 32px 48px;
+  @media (min-width: 800px) {
+    grid-template-columns: 252px 1fr;
+
+    main {
+      padding: 40px 48px 32px 48px;
+    }
   }
 `;

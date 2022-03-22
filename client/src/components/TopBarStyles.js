@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 
 export const TopBarWrap = styled.div`
+  @font-face {
+    font-family: Proxima Nova;
+    font-display: swap;
+    src: url("./fonts/proxima-nova.otf") format("opentype");
+  };
+
   padding: 16px 24px 16px 32px;
   display: flex;
   justify-content: space-between;
@@ -15,18 +21,15 @@ export const TopBarWrap = styled.div`
   }
 
   .top-bar-left > span {
-    font: Proxima Nova;
-    font-weight: 700;
-    font-size: 21px;
-    line-height: 24px;
-  }
-
-  .hightouch {
-    color: #271F4D;
+    font: 700 21px/24px Proxima Nova;
   }
 
   .docs {
     color: rgba(15, 24, 37, 0.42);
+  }
+
+  .hightouch {
+    color: #271F4D;
   }
 
   .vertical-line {

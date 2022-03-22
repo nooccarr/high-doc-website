@@ -2,11 +2,8 @@ import styled from 'styled-components';
 
 export const LoginButtonWrap = styled.button`
   cursor: pointer;
-  font: Inter;
-  font-size: 14px;
-  line-height: 16.24px;
+  font: 600 14px/16.24px Inter;
   letter-spacing: 0.2px;
-  font-weight: 600;
   background-color: #271F4D;
   border-radius: 6px;
   border: none;

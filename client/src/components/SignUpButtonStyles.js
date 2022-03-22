@@ -2,11 +2,9 @@ import styled from 'styled-components';
 
 export const SignUpButtonWrap = styled.button`
   cursor: pointer;
-  font: Inter;
-  font-size: 14px;
-  line-height: 16.24px;
+  font: 500 14px/16.24px Inter;
   letter-spacing: 0.2px;
-  font-weight: 500;
+
   background-color: #FFFFFF;
   border-radius: 6px;
   border: none;

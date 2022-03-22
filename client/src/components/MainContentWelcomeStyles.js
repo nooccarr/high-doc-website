@@ -6,10 +6,7 @@ export const MainContentWelcomeWrap = styled.section`
   h2 {
     margin: 0;
     padding: 24px 0px;
-    font: Inter;
-    font-weight: 600;
-    font-size: 17.72px;
-    line-height: 20.38px;
+    font: 600 17.72px/20.38px Inter;
     letter-spacing: 0.2px;
     color: rgba(15, 24, 37, 0.9);
   }

@@ -17,10 +17,7 @@ export const NavigationItemWrap = styled.div`
   }
 
   h2 {
-    font: Inter;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 16.24px;
+    font: 500 14px/16.24px Inter;
     letter-spacing: 0.2px;
     color: rgba(15, 24, 37, 0.9);
   }
@@ -30,7 +27,7 @@ export const NavigationItemWrap = styled.div`
     cursor: pointer;
     color: rgba(15, 24, 37, 0.42);
     display: block;
-    font-size: 14px;
+    font: 14px Inter;
     padding: 12px 22px;
   }
 
