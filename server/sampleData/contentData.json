@@ -183,7 +183,7 @@
     {
       "thumbnail": "./images/Data_Integration_The_Definitive_Guide_852b8c6bbb.png",
       "title": "Data Integration: The Definitive Guide",
-      "description": "Data integration is the process of moving data between databases internal, external, or both. Read this guide to learn about all the integration technologies and understand how data moves through each of them."
+      "description": "Getting data from your Data Warehouse into Slack couldn’t be easier. With just a few lines of SQL, you can start sending custom notifications to your teams in minutes."
     }
   ]
 }
