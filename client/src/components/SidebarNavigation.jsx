@@ -8,7 +8,7 @@ import { ViewContext } from '../contexts/ViewContext';
 
 import { SidebarNavigationWrap } from './SidebarNavigationStyles';
 
-const SidebarNavigation = ({ navItemList, navItems, setMainContentItem, showMobileNav, toggleMobileNav }) => {
+const SidebarNavigation = ({ navItemList, navItems, showMobileNav, updatePath, toggleMobileNav }) => {
   const view = useContext(ViewContext);
 
   const renderSignUpLoginButton = () => {
@@ -31,7 +31,7 @@ const SidebarNavigation = ({ navItemList, navItems, setMainContentItem, showMobi
               <NavigationItem
                 navItem={navItem}
                 navSubItems={navItems[navItem]}
-                setMainContentItem={setMainContentItem}
+                updatePath={updatePath}
                 toggleMobileNav={toggleMobileNav}
                 key={key}
               />

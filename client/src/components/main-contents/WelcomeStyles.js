@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MainContentWelcomeWrap = styled.section`
+export const WelcomeWrap = styled.section`
 
 
   h2 {

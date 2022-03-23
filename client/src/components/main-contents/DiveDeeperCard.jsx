@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { renderSvg } from '../files/svgs';
+import { renderSvg } from '../../files/svgs';
 
 import { DiveDeeperCardWrap } from './DiveDeeperCardStyles';
 

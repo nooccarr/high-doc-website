@@ -7,7 +7,7 @@ import { renderSvg } from '../files/svgs';
 
 import { NavigationItemWrap } from './NavigationItemStyles';
 
-const NavigationItem = ({ navItem, navSubItems=[], setMainContentItem, toggleMobileNav }) => {
+const NavigationItem = ({ navItem, navSubItems=[], updatePath, toggleMobileNav }) => {
   const view = useContext(ViewContext);
 
   return (
@@ -24,7 +24,7 @@ const NavigationItem = ({ navItem, navSubItems=[], setMainContentItem, toggleMob
             <Link
               to={route}
               onClick={() => {
-                setMainContentItem(navSubItem);
+                updatePath(route);
                 if (view === 'mobile') toggleMobileNav();
               }}
             >

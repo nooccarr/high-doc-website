@@ -2,8 +2,8 @@ import React from 'react';
 
 import SectionHeading from './SectionHeading';
 
-const MainContentOther = ({ mainContentHeading }) => (
+const SyncTemplates = ({ mainContentHeading }) => (
   <SectionHeading mainContentHeading={mainContentHeading} />
 );
 
-export default MainContentOther;
+export default SyncTemplates;

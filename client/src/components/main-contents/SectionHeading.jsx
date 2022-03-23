@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 
-import { renderSvg } from '../files/svgs';
+import { renderSvg } from '../../files/svgs';
 
 import { SectionHeadingWrap } from './SectionHeadingStyles';
 

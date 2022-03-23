@@ -4,12 +4,12 @@ import Axios from 'axios';
 import SectionHeading from './SectionHeading';
 import DiveDeeperCard from './DiveDeeperCard';
 
-import { MainContentWelcomeWrap } from './MainContentWelcomeStyles';
+import { WelcomeWrap } from './WelcomeStyles';
 
-const MainContentWelcome = ({ mainContentHeading, diveDeeperCards }) => (
+const Welcome = ({ mainContentHeading, diveDeeperCards }) => (
   <Fragment>
     <SectionHeading mainContentHeading={mainContentHeading} />
-    <MainContentWelcomeWrap>
+    <WelcomeWrap>
       <h2>Dive deeper...</h2>
       <div className='cards-container'>
         {diveDeeperCards.map((diveDeeperCard, key) => {
@@ -21,8 +21,8 @@ const MainContentWelcome = ({ mainContentHeading, diveDeeperCards }) => (
           );
         })}
       </div>
-    </MainContentWelcomeWrap>
+    </WelcomeWrap>
   </Fragment>
 );
 
-export default MainContentWelcome;
+export default Welcome;
