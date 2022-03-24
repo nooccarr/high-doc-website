@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const DiveDeeperCardWrap = styled.div`
-  width: 100%;
   border: 1px solid #E2E7EB;
   border-radius: 8px;
   padding: 12px 12px 30px 12px;
