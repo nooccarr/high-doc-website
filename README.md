@@ -66,6 +66,5 @@ Open [Hightouch Clone](https://hightouch-clone.herokuapp.com) in the browser.
 
 ## Future Implementations
 
-* Nested routing
 * Signup and Login page
 * Document pages

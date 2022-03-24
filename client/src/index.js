@@ -11,7 +11,3 @@ render(
   </StrictMode>,
   rootElement
 );
-
-// TODO:
-// lighthouse
-// readme

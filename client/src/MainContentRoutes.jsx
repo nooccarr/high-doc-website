@@ -28,83 +28,83 @@ const MainContentRoutes = ({ mainContentHeadings, diveDeeperCards, getRoutes }) 
   const routes = [
     {
       path: '/',
-      element: <Welcome mainContentHeading={mainContentHeadings['/']} diveDeeperCards={diveDeeperCards} />
+      element: <Welcome mainContentHeading={mainContentHeadings['welcome']} diveDeeperCards={diveDeeperCards} />
     },
     {
       path: '/concepts',
-      element: <Concepts mainContentHeading={mainContentHeadings['/concepts']} />
+      element: <Concepts mainContentHeading={mainContentHeadings['concepts']} />
     },
     {
-      path: '/acoustic',
-      element: <Acoustic mainContentHeading={mainContentHeadings['/acoustic']} />
+      path: '/destinations/acoustic',
+      element: <Acoustic mainContentHeading={mainContentHeadings['acoustic']} />
     },
     {
-      path: '/asana',
-      element: <Asana mainContentHeading={mainContentHeadings['/asana']} />
+      path: '/destinations/asana',
+      element: <Asana mainContentHeading={mainContentHeadings['asana']} />
     },
     {
-      path: '/customerio',
-      element: <CustomerIo mainContentHeading={mainContentHeadings['/customerio']} />
+      path: '/destinations/customerio',
+      element: <CustomerIo mainContentHeading={mainContentHeadings['customerio']} />
     },
     {
-      path: '/google',
-      element: <GoogleAds mainContentHeading={mainContentHeadings['/google']} />
+      path: '/destinations/google',
+      element: <GoogleAds mainContentHeading={mainContentHeadings['google']} />
     },
     {
-      path: '/pendo',
-      element: <Pendo mainContentHeading={mainContentHeadings['/pendo']} />
+      path: '/destinations/pendo',
+      element: <Pendo mainContentHeading={mainContentHeadings['pendo']} />
     },
     {
-      path: '/rokt',
-      element: <Rokt mainContentHeading={mainContentHeadings['/rokt']} />
+      path: '/destinations/rokt',
+      element: <Rokt mainContentHeading={mainContentHeadings['rokt']} />
     },
     {
-      path: '/segment',
-      element: <Segment mainContentHeading={mainContentHeadings['/segment']} />
+      path: '/destinations/segment',
+      element: <Segment mainContentHeading={mainContentHeadings['segment']} />
     },
     {
-      path: '/tiktok',
-      element: <Tiktok mainContentHeading={mainContentHeadings['/tiktok']} />
+      path: '/destinations/tiktok',
+      element: <Tiktok mainContentHeading={mainContentHeadings['tiktok']} />
     },
     {
-      path: '/zendesk',
-      element: <Zendesk mainContentHeading={mainContentHeadings['/zendesk']} />
+      path: '/destinations/zendesk',
+      element: <Zendesk mainContentHeading={mainContentHeadings['zendesk']} />
     },
     {
-      path: '/overview',
-      element: <Overview mainContentHeading={mainContentHeadings['/overview']} />
+      path: '/hightouch-audiences/overview',
+      element: <Overview mainContentHeading={mainContentHeadings['overview']} />
     },
     {
-      path: '/usage',
-      element: <Usage mainContentHeading={mainContentHeadings['/usage']} />
+      path: '/hightouch-audiences/usage',
+      element: <Usage mainContentHeading={mainContentHeadings['usage']} />
     },
     {
-      path: '/schema',
-      element: <Schema mainContentHeading={mainContentHeadings['/schema']} />
+      path: '/hightouch-audiences/schema',
+      element: <Schema mainContentHeading={mainContentHeadings['schema']} />
     },
     {
-      path: '/sync-templates',
-      element: <SyncTemplates mainContentHeading={mainContentHeadings['/sync-templates']} />
+      path: '/hightouch-audiences/sync-templates',
+      element: <SyncTemplates mainContentHeading={mainContentHeadings['sync-templates']} />
     },
     {
-      path: '/permissions',
-      element: <Permissions mainContentHeading={mainContentHeadings['/permissions']} />
+      path: '/workspaces/permissions',
+      element: <Permissions mainContentHeading={mainContentHeadings['permissions']} />
     },
     {
-      path: '/pricing',
-      element: <Pricing mainContentHeading={mainContentHeadings['/pricing']} />
+      path: '/workspaces/pricing',
+      element: <Pricing mainContentHeading={mainContentHeadings['pricing']} />
     },
     {
-      path: '/securitybasics',
-      element: <SecurityBasics mainContentHeading={mainContentHeadings['/securitybasics']} />
+      path: '/security/securitybasics',
+      element: <SecurityBasics mainContentHeading={mainContentHeadings['securitybasics']} />
     },
     {
-      path: '/tunnel',
-      element: <Tunnel mainContentHeading={mainContentHeadings['/tunnel']} />
+      path: '/security/tunnel',
+      element: <Tunnel mainContentHeading={mainContentHeadings['tunnel']} />
     },
     {
-      path: '/sso',
-      element: <Sso mainContentHeading={mainContentHeadings['/sso']} />
+      path: '/security/sso',
+      element: <Sso mainContentHeading={mainContentHeadings['sso']} />
     },
     {
       path: '*',

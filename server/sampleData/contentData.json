@@ -14,162 +14,162 @@
     "Destinations": [
       {
         "item": "Acoustic",
-        "route": "/acoustic"
+        "route": "/destinations/acoustic"
       },
       {
         "item": "Asana",
-        "route": "/asana"
+        "route": "/destinations/asana"
       },
       {
         "item": "Customer.io",
-        "route": "/customerio"
+        "route": "/destinations/customerio"
       },
       {
         "item": "Google Ads",
-        "route": "/google"
+        "route": "/destinations/google"
       },
       {
         "item": "Pendo",
-        "route": "/pendo"
+        "route": "/destinations/pendo"
       },
       {
         "item": "Rokt",
-        "route": "/rokt"
+        "route": "/destinations/rokt"
       },
       {
         "item": "Segment",
-        "route": "/segment"
+        "route": "/destinations/segment"
       },
       {
         "item": "Tiktok",
-        "route": "/tiktok"
+        "route": "/destinations/tiktok"
       },
       {
         "item": "Zendesk",
-        "route": "/zendesk"
+        "route": "/destinations/zendesk"
       }
     ],
     "Audiences": [
       {
         "item": "Overview",
-        "route": "/overview"
+        "route": "/hightouch-audiences/overview"
       },
       {
         "item": "Usage",
-        "route": "/usage"
+        "route": "/hightouch-audiences/usage"
       },
       {
         "item": "Schema",
-        "route": "/schema"
+        "route": "/hightouch-audiences/schema"
       },
       {
         "item": "Sync Templates",
-        "route": "/sync-templates"
+        "route": "/hightouch-audiences/sync-templates"
       }
     ],
     "Workspaces": [
       {
         "item": "User Permissions",
-        "route": "/permissions"
+        "route": "/workspaces/permissions"
       },
       {
         "item": "Pricing Information",
-        "route": "/pricing"
+        "route": "/workspaces/pricing"
       }
     ],
     "Security": [
       {
         "item": "Security Basics",
-        "route": "/securitybasics"
+        "route": "/security/securitybasics"
       },
       {
         "item": "Tunnels",
-        "route": "/tunnel"
+        "route": "/security/tunnel"
       },
       {
         "item": "Single Sign-On (SSO)",
-        "route": "/sso"
+        "route": "/security/sso"
       }
     ]
   },
   "mainContentHeadings": {
-    "/": {
+    "welcome": {
       "title": "Hightouch Documentation",
       "description": "Get an overview of Hightouch's features, integrations, and how to use them."
     },
-    "/concepts": {
+    "concepts": {
       "title": "Concepts",
       "description": "At a high-level, Hightouch constructs your data pipeline by connecting a model to a destination. This is called a sync."
     },
-    "/acoustic": {
+    "acoustic": {
       "title": "Acoustic",
       "description": "Acoustic is a marketing platform that enables you to run automated, personalized email campaigns."
     },
-    "/asana": {
+    "asana": {
       "title": "Asana",
       "description": "Asana is a web and mobile application designed to help teams organize, track, and manage their work."
     },
-    "/customerio": {
+    "customerio": {
       "title": "Customer.io",
       "description": "With Customer.io, send targeted emails, push notifications, and SMS to lower churn, create stronger relationships, and drive subscriptions."
     },
-    "/google": {
+    "google": {
       "title": "Google Ads",
       "description": "Google Ads remarketing allows you to advertise to people who have previously visited your website, used your mobile app, or who are in your CRM databases, by showing them relevant ads when they visit other sites or search on Google. The user lists used in remarketing can also be used for other types of audience targeting, such as Customer Match."
     },
-    "/pendo": {
+    "pendo": {
       "title": "Pendo",
       "description": "Pendo is a product experience platform that helps software product teams deliver software users love."
     },
-    "/rokt": {
+    "rokt": {
       "title": "Rokt",
       "description": "Use the Events API to send event data straight from your data warehouse to Rokt for use within Rokt's advertising platform."
     },
-    "/segment": {
+    "segment": {
       "title": "Segment",
       "description": "Segment provides a single API to track customer data across multiple devices and channels and send it to third-party tools, internal systems, and data warehouses."
     },
-    "/tiktok": {
+    "tiktok": {
       "title": "Tiktok",
       "description": "Use the Tiktok marketing events API to send web event information to be used within Tiktok for marketing purposes."
     },
-    "/zendesk": {
+    "zendesk": {
       "title": "Zendesk",
       "description": "Zendesk provides a leading customer service platform that includes ticketing, self-service options, and customer support features. Its cloud-based help desk solution is used by more than 200,000 organizations worldwide."
     },
-    "/overview": {
+    "overview": {
       "title": "Overview",
       "description": "Hightouch Audiences turns your data warehouse into a CDP (Customer Data Platform). It’s a visual drag-n-drop audience builder (typically used by marketing teams) that enables self-service cohort creation and orchestration directly from your data models in the warehouse, without requiring any SQL knowledge."
     },
-    "/usage": {
+    "usage": {
       "title": "Usage",
       "description": "To create and sync a Hightouch Audience:"
     },
-    "/schema": {
+    "schema": {
       "title": "Schema",
       "description": "The root users table, related objects, and events, are configured in the schema tab. The schemas tab is divided into objects and events."
     },
-    "/sync-templates": {
+    "sync-templates": {
       "title": "Sync Templates",
       "description": "Sync templates allow you to centralize configuration when syncing audiences to a particular destination. Define your sync configuration in one place, then sync your audiences without duplicating your config unnecessarily."
     },
-    "/permissions": {
+    "permissions": {
       "title": "User Permissions",
       "description": "Hightouch Workspaces allow you to select granular, customizable roles to limit permissions for your users."
     },
-    "/pricing": {
+    "pricing": {
       "title": "Pricing Information",
       "description": "Transparency into our pricing model and some answers to commonly asked questions."
     },
-    "/securitybasics": {
+    "securitybasics": {
       "title": "Security Basics",
       "description": "This is an overview of our security and infrastructure."
     },
-    "/tunnel": {
+    "tunnel": {
       "title": "Tunnels",
       "description": "Connect to your data warehouse securely. Hightouch supports the ability to self-serve set up an SSH tunnel connection, either standard or reverse."
     },
-    "/sso": {
+    "sso": {
       "title": "SSO",
       "description": "Connect to Hightouch with SSO."
     }

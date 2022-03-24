@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 
 export const TopBarWrap = styled.div`
-  @font-face {
-    font-family: Proxima Nova;
-    font-display: swap;
-    src: url("./fonts/proxima-nova.otf") format("opentype");
-  };
-
   padding: 16px 24px 16px 32px;
   display: flex;
   justify-content: space-between;
