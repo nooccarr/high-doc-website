@@ -11,31 +11,31 @@ const NavigationItem = ({ navItem, navSubItems=[], updatePath, toggleMobileNav }
   const view = useContext(ViewContext);
 
   return (
-  <NavigationItemWrap>
-    <ul>
-      <div>
-        {renderSvg[navItem]}
-        <h2>{navItem}</h2>
-      </div>
-      {navSubItems.map((navSubItem, key) => {
-        const { item, route } = navSubItem;
-        return (
-          <li key={key}>
-            <Link
-              to={route}
-              onClick={() => {
-                updatePath(route);
-                if (view === 'mobile') toggleMobileNav();
-              }}
-            >
-              {item}
-            </Link>
-          </li>
-        );
-      })}
-    </ul>
-  </NavigationItemWrap>
-);
+    <NavigationItemWrap>
+      <ul>
+        <div>
+          {renderSvg[navItem]}
+          <h2>{navItem}</h2>
+        </div>
+        {navSubItems.map((navSubItem, key) => {
+          const { item, route } = navSubItem;
+          return (
+            <li key={key}>
+              <Link
+                to={route}
+                onClick={() => {
+                  updatePath(route);
+                  if (view === 'mobile') toggleMobileNav();
+                }}
+              >
+                {item}
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </NavigationItemWrap>
+  );
 }
 
 export default NavigationItem;

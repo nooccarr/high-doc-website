@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext, Fragment } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Axios from 'axios';
 
 import Spinner from './Spinner';
@@ -26,7 +26,6 @@ const App = () => {
   const [view, setView] = useState(null);
   const [showMobileNav, setShowMobileNav] = useState(false);
   const [currentPath, setCurrentPath] = useState(null);
-  const [routes, setRoutes] = useState([]);
 
   useEffect(() => {
     getSidebarNavMainContentData();
@@ -68,10 +67,6 @@ const App = () => {
     setShowMobileNav(!showMobileNav);
   };
 
-  const getRoutes = (routes) => {
-    setRoutes(routes);
-  }
-
   const renderTopBarRightContent = () => {
     if (view === 'desktop') {
       return (
@@ -108,19 +103,10 @@ const App = () => {
   );
 
   const mainContentComponent = () => (
-    <main>
-      <MainContentRoutes
-        mainContentHeadings={mainContentHeadings}
-        diveDeeperCards={diveDeeperCards}
-        getRoutes={getRoutes}
-      />
-      <Routes>
-        {routes.map((route, index) => {
-          const { path, element } = route;
-          return <Route key={index} path={path} element={element} />;
-        })}
-      </Routes>
-    </main>
+    <MainContentRoutes
+      mainContentHeadings={mainContentHeadings}
+      diveDeeperCards={diveDeeperCards}
+    />
   );
 
   const renderSideNavMainContent = () => {
